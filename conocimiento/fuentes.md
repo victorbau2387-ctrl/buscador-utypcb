@@ -126,6 +126,62 @@ Filas: `costos-total`, `costos-cuatrimestre` (parcial), `admision-propedeutico` 
 - «¿No encuentras un documento? … Escribir a Servicios Escolares» (`serviciosescolares@utypcb.edu.mx`).
 - No hay datos de Unidad de Transparencia ni de solicitudes de acceso a la información (`transparencia-solicitud`, PENDIENTE).
 
+## Ampliación: preguntas de alumnos inscritos (46 filas, consulta del 17/11/2026)
+
+Se volvió a recorrer el sitio buscando información para alumnos ya inscritos (todas las páginas enlazadas desde el menú, las 31 notas
+de `noticias.php`, las 5 de `deportes.php`, las páginas `plan_estudios.php?carrera=…` y `detalle_carrera.php?carrera=…`, y los planes de
+estudio en PDF). **El sitio casi no publica información para alumnos inscritos** (no hay reglamento, sistema escolar, trámites,
+servicios ni directorio), así que 39 de las 46 filas nuevas son PENDIENTE con el formato `[PENDIENTE: qué falta — lo proporciona área]`
+(5 de ellas agregan el dato relacionado que sí está publicado), 3 son parciales (`carreras-horas-semana`, `idiomas-otros`, `visitas-campo`)
+y 4 tienen respuesta oficial completa (`calendario-entrega-calificaciones`, `ingles-nivel-mcer`, `carreras-semanas-cuatrimestre`, `estadias-horas`).
+
+### Planes de estudio oficiales (PDF de la Dirección General de Universidades Tecnológicas y Politécnicas), enlazados en `plan_estudios.php?carrera=…`
+- `https://utypcb.edu.mx/OfertaEducativa/IngenieriaCivil/47.1-PES_LIC-EN-ING-CIVIL-CONSTRUCCION-2024.pdf` (y su mapa `47.1-MCR_…pdf`)
+- `https://utypcb.edu.mx/OfertaEducativa/IngenieriaEnEnergiaYDesarrolloSostenible/PES-LIC-EN-ING-EN-ENERGIA-2024.pdf`
+- `https://utypcb.edu.mx/OfertaEducativa/Licenciatura%20en%20Ingenier%C3%ADa%20en%20Manejo%20de%20Recursos%20Naturales/46.2-PES-LIC-EN-ING-RECURSOS-NATURALES-FAUNA2024.pdf`
+- `https://utypcb.edu.mx/OfertaEducativa/LicenciaturaEnComercioInternaconalYAduanas/PES-LIC-EN-COMERCIO-INT-Y-ADUANAS-PL-2024.pdf`
+- `https://utypcb.edu.mx/OfertaEducativa/Ingenier%C3%ADaenTecnolog%C3%ADasdelaInformaci%C3%B3neInnovaci%C3%B3nDigital/35.1-PES-LIC-EN-ING-EN-TI-E-ID-ENTORNOS-VIRTUALES-2024.pdf`
+
+Datos iguales en los cinco: «MODALIDAD: ESCOLARIZADA», «DURACIÓN DEL CICLO: 15 SEMANAS», antecedente de ingreso «BACHILLERATO
+CONCLUIDO», cada cuatrimestre de clases suma 35 horas a la semana y 525 horas, y la ESTADÍA del 6.º y del 10.º cuatrimestre vale
+600 horas (Civil y Comercio la marcan con 40 horas a la semana). En el mapa curricular de Civil, A1 y A2 aparecen como «usuario básico».
+Filas: `carreras-semanas-cuatrimestre`, `carreras-horas-semana` (parcial), `estadias-horas`.
+
+**Aviso para el revisor:** estos PDF responden dos filas que ya estaban PENDIENTE y no se tocaron: `admision-modalidad`
+(«escolarizada») y, en parte, `admision-bachillerato-en-curso` (el plan pide «bachillerato concluido»). Conviene actualizarlas.
+
+### Otras páginas usadas en las filas nuevas
+- `https://utypcb.edu.mx/plan_estudios.php?carrera=ingenieria-civil` y las otras cuatro `?carrera=…`: competencia base «Comunicar en
+  inglés (A1–B1) de acuerdo con el MCER» (A2–B1 en Civil) → `ingles-nivel-mcer`; solo aparece Inglés en los mapas → `idiomas-otros` (parcial).
+- `https://utypcb.edu.mx/noticias.php?n=visita-de-campo-tsu-construccion`: visita de campo del grupo de TSU en Construcción 3.1 → `visitas-campo` (parcial).
+- `https://utypcb.edu.mx/noticias.php?n=dia-naranja-vida-libre-de-violencia` (publicada en mayo de 2026): pláticas de la Secretaría de la Mujer
+  Municipal y de Centro Libre → `violencia-acoso` (parcial; el protocolo sigue PENDIENTE).
+- `https://utypcb.edu.mx/noticias.php?n=jornada-transformando-guerrero-beca-50` → contexto de `becas-perder`.
+- `https://utypcb.edu.mx/calendario.php`: «Entrega de calificaciones a Servicios Escolares y fin de cuatrimestre» (16 dic 2026, 14 abr 2027)
+  → `calendario-entrega-calificaciones` (dinámica `calendario_evento`, no se copió la fecha).
+- `https://utypcb.edu.mx/convocatorias.php`: forma de pago publicada solo para ficha e inscripción de nuevo ingreso y sistema de
+  pre-registro de aspirantes → contexto de `pagos-cuatrimestre-donde`, `pagos-caja-horario`, `plataforma-escolar`, `plataforma-contrasena`.
+- Notas revisadas sin datos para alumnos que no estuvieran ya en la base: `homenaje-reconocimiento-estudiantes-destacados`,
+  `maratones-por-la-lectura-paz`, `deporte-convivencia-jornada-por-la-paz`, `segunda-encarreratecnm-5k-10k`,
+  `encuentro-riesgos-hidrometeorologicos-2026`, `jornadas-transformando-guerrero-becas`, `espiritu-coyote-actitud`, y las 5 de deportes
+  (ya cubiertas por `deportes-disciplinas` y `servicios-actividades`).
+
+### PENDIENTES nuevos por área (filas de alumnos inscritos)
+- **Servicios Escolares**: pérdida de beca (`becas-perder`), recursamiento, baja académica, baja de una materia, cambio de grupo o turno,
+  traslado a otra UT, reglamento, matrícula o número de control, continuidad con TSU externo, tiempo de entrega del título, carta de buena
+  conducta, sociedad de alumnos, accidentes, impresiones, sistema escolar en línea y contraseña, correo institucional, objetos perdidos,
+  estacionamiento, accesibilidad, estudiantes con hijos, relación estadía–servicio social.
+- **Recursos Financieros**: forma de pago y cuenta para cuatrimestre e inscripción anual de reingreso, factura, ubicación y horario de la caja.
+- **Dirección Académica**: calificación mínima aprobatoria, revisión de calificaciones, retardos y tolerancia, asesorías, certificación o
+  examen de inglés, otros idiomas, horario de grupo y turno, laptop propia, coordinaciones de carrera, calendario y costo de visitas de
+  campo, estadía no acreditada, asesor de estadía.
+- **Vinculación**: movilidad e intercambio, asesor de estadía, estadía y servicio social, estadía no acreditada.
+- **Rectoría**: protocolo contra acoso y violencia, canal de avisos por contingencias (lluvias, huracanes), quejas y sugerencias,
+  sociedad de alumnos.
+
+Se evitaron duplicados con filas existentes: por ejemplo, «puedo hacer la estadía en Acapulco» y «yo busco la empresa o me la asignan»
+ya los cubre `estadias-donde`; enfermedad y primeros auxilios, `servicio-medico`; talleres culturales y concursos, `servicios-actividades`.
+
 ## Páginas que no existen (404) al 17/11/2026
 `contacto.php` (la usa `config.example.php` como `contacto_general.url`), `nosotros.php`, `becas.php`, `servicios.php`,
 `directorio.php`, `robots.txt`, `sitemap.xml`, `docs/poa_2025.pdf`, `docs/pe_2025_2030.pdf`, `docs/informe_q3.pdf`.

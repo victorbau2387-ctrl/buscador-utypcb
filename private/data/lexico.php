@@ -45,6 +45,16 @@ return [
         'no hay clases' => 'suspension', 'control escolar' => 'escolares', 'servicios escolares' => 'escolares',
         'recursos financieros' => 'financieros', 'bolsa de trabajo' => 'bolsa trabajo',
         'cedula profesional' => 'cedula', 'beca benito juarez' => 'beca benito', 'jovenes escribiendo el futuro' => 'beca benito',
+        // Agregadas con las preguntas de alumnos inscritos.
+        // "dónde/cómo pago" pregunta por la forma de pago, no por el monto (pagar es sinónimo de costo).
+        'donde pago' => 'formapago', 'donde se paga' => 'formapago', 'donde pagar' => 'formapago', 'donde le pago' => 'formapago',
+        'como pago' => 'formapago', 'como se paga' => 'formapago', 'como pagar' => 'formapago', 'donde deposito' => 'formapago deposito',
+        'donde le deposito' => 'formapago deposito',
+        // "matrícula" suele ser el número de alumno; como sinónimo de inscripción se confundía.
+        'numero de control' => 'numcontrol', 'mi matricula' => 'numcontrol',
+        'con cuanto se pasa una materia' => 'aprobar materia', 'con cuanto paso' => 'aprobar', 'con cuanto se aprueba' => 'aprobar',
+        'buena conducta' => 'buenaconducta', 'sociedad de alumnos' => 'sociedadalumnos', 'objetos perdidos' => 'perdido',
+        'no puedo entrar' => 'olvide', 'tiempo completo' => 'tiempocompleto',
     ],
 
     // Grupos de sinónimos: cualquier palabra del grupo se convierte en la primera.
@@ -117,6 +127,45 @@ return [
         ['limite', 'ultimo', 'ultima', 'vence', 'vencimiento', 'plazo'],
         ['reingreso', 'volver', 'regresar', 'reincorporarme', 'reincorporar'],
         ['cambio', 'cambiar', 'cambiarme', 'pasarme'],
+        // Agregados con las preguntas de alumnos inscritos.
+        ['factura', 'facturas', 'facturar', 'facturan', 'facturacion', 'cfdi', 'deducir'],
+        ['quitan', 'quiten', 'quita', 'pierde', 'pierdo', 'perder', 'cancelan', 'cancelar', 'cancelaron'],
+        ['reprobar', 'repruebo', 'reprobe', 'reprobada', 'reprobadas', 'reprobado', 'reprobados', 'reprueba', 'repruebas', 'repruebe', 'reprobacion', 'trone', 'tronar', 'truene'],
+        ['aprobar', 'aprobatoria', 'aprobatorio', 'aprobatorias', 'apruebo', 'aprobado', 'aprobada', 'aprueba'],
+        ['minimo', 'minima', 'minimos', 'minimas'],
+        ['revision', 'aclaracion', 'aclarar', 'inconforme', 'inconformidad', 'conforme', 'equivoco', 'equivocaron', 'equivocado'],
+        // 'recursar' y 'recursos' comparten la raíz 'recurs': se normaliza a 'repetir'.
+        ['repetir', 'recursar', 'recursamiento', 'recursando', 'recurse', 'recursarla', 'repito', 'repita'],
+        ['retardo', 'retardos', 'tolerancia', 'impuntual'],
+        ['grupo', 'grupos', 'salon', 'salones'],
+        ['traslado', 'trasladarme', 'trasladar', 'portabilidad', 'transferirme'],
+        // 'asesoria' y 'asesor' (de estadía) comparten raíz: las asesorías académicas se normalizan a 'regularizacion'.
+        ['regularizacion', 'asesoria', 'asesorias', 'regularizarme', 'regularizar', 'refuerzo'],
+        ['asesor', 'asesores', 'asesora', 'asesorar'],
+        ['lengua', 'lenguas', 'frances', 'aleman', 'italiano', 'chino', 'japones', 'portugues', 'coreano'],
+        ['semana', 'semanas', 'semanal', 'semanales'],
+        ['reglamento', 'reglamentos', 'normas', 'norma', 'normativa', 'lineamientos', 'lineamiento', 'reglas', 'regla'],
+        ['coordinador', 'coordinadora', 'coordinacion', 'coordinadores', 'director', 'directora', 'jefe', 'jefa'],
+        ['visita', 'visitas', 'salida', 'salidas', 'viaje', 'viajes', 'excursion', 'excursiones'],
+        ['accidente', 'accidentes', 'accidento', 'lastime', 'lastimo', 'lesion', 'cai'],
+        ['imprimir', 'impresion', 'impresiones', 'impresora', 'imprimo', 'copias', 'copiadora', 'fotocopias'],
+        ['plataforma', 'plataformas', 'portal', 'sistema', 'sescolar'],
+        ['contrasena', 'contrasenas', 'password', 'contrasea'],
+        ['olvide', 'olvido', 'olvidaron', 'olvidar', 'recuperar', 'restablecer', 'bloquearon', 'bloqueada'],
+        ['institucional', 'institucionales'],
+        ['intercambio', 'intercambios', 'movilidad', 'extranjero'],
+        ['queja', 'quejas', 'quejarme', 'quejo', 'sugerencia', 'sugerencias', 'reclamo', 'buzon'],
+        ['perdido', 'perdidos', 'perdida', 'perdidas', 'perdi', 'perdio', 'extravie', 'extraviado', 'extravio'],
+        ['estacionamiento', 'estacionar', 'estaciono', 'estacionarme', 'parking', 'cochera'],
+        ['carro', 'carros', 'coche', 'coches', 'auto', 'autos', 'moto', 'motos', 'bicicleta', 'bici', 'vehiculo'],
+        ['discapacidad', 'discapacitado', 'discapacitada', 'rampa', 'rampas', 'accesibilidad', 'accesible', 'accesibles', 'silla', 'ruedas', 'inclusion'],
+        ['acoso', 'acosando', 'acosa', 'acosan', 'acosador', 'hostigamiento', 'hostiga', 'violencia', 'bullying', 'abuso', 'genero'],
+        ['denunciar', 'denuncia', 'denuncio', 'reportar'],
+        // 'contingencia' y 'continuidad' comparten raíz: el grupo se normaliza a 'huracan'.
+        ['huracan', 'huracanes', 'lluvia', 'lluvias', 'tormenta', 'tormentas', 'ciclon', 'clima', 'contingencia', 'inundacion', 'sismo', 'temblor', 'llueve'],
+        ['embarazada', 'embarazo', 'embarazadas', 'maternidad', 'paternidad', 'bebe', 'hijo', 'hijos', 'hija', 'hijas', 'madre', 'lactancia'],
+        ['expulsan', 'expulsion', 'expulsado', 'corren', 'corrieron'],
+        ['maestro', 'maestra', 'maestros', 'profe', 'profesor', 'profesora', 'docente', 'docentes', 'profes'],
     ],
 
     // Palabras que no aportan significado a la búsqueda.
