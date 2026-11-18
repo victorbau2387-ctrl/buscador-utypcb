@@ -56,6 +56,8 @@ BF_CONFIG=tests/sitio-local/config.local.php /c/Users/Usuario/dev-tools/php83/ph
 - Teclado: Tab hasta el botón, Enter o Espacio abre; Tab no sale del panel; Escape cierra y el foco
   vuelve al botón.
 - "ingeniería civil" y luego "¿y cuánto cuesta?" (el contexto de la carrera se reenvía).
-- "¿tienen medicina?" (no ofertada), "xyz abc" (sin respuesta + contacto), "carreras" (sugerencias).
+- "¿tienen medicina?" al inicio de la sesión (no ofertada), "xyz abc" (sin respuesta + contacto),
+  "que es la ingenieria en energia" (sugerencias: "¿Quisiste decir…?").
+- Escribe más de 300 caracteres: el campo se detiene y el contador cambia de color.
 - Ventana de menos de 480 px: el panel ocupa toda la pantalla.
 - Con "reducir movimiento" activado en el sistema no hay animaciones.
