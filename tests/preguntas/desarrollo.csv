@@ -67,3 +67,37 @@ se hace servicio social,servicio-social
 cual es la receta del pozole,sin_respuesta
 quien gano el clasico america chivas,sin_respuesta
 cuanto cuesta un boleto de avion a tijuana,sin_respuesta
+en que banco pago mi cuatrimestre si ya soy alumno,pagos-cuatrimestre-donde
+me pueden hacer factura de la reinscripcion,pagos-factura
+a que horas atiende la caja de la escuela,pagos-caja-horario
+si bajo mi promedio me quitan la beca,becas-perder
+para cuando entregan las calificaciones de este cuatrimestre,calendario-entrega-calificaciones
+cual es la calificacion minima para aprobar,evaluacion-minimo-aprobatorio
+el profe me puso una calificacion que no es la mia,evaluacion-revision-calificacion
+puedo volver a cursar una materia que trone,tramite-recursamiento
+cuantas materias reprobadas te dan de baja,evaluacion-baja-academica
+cuantos minutos de tolerancia dan para entrar al salon,asistencia-retardos
+me puedo cambiar al grupo de la tarde,tramite-cambio-grupo-turno
+quiero pedir mi traslado a otra universidad politecnica,tramite-traslado-otra-ut
+hay asesorias de matematicas para los que van mal,servicios-asesorias
+con que nivel de ingles salimos de la carrera,ingles-nivel-mcer
+piden examen toefl para titularme,ingles-certificacion
+dan clases de frances en la uni,idiomas-otros
+cuantas semanas tiene un cuatrimestre,carreras-semanas-cuatrimestre
+cuantas horas de clase son por semana,carreras-horas-semana
+donde consigo el horario de mi grupo,horario-grupo
+donde puedo leer el reglamento de alumnos,reglamento-escolar
+cuantas horas dura la estadia en la empresa,estadias-horas
+la estadia me sirve como servicio social,estadias-servicio-social
+que pasa si no apruebo la estadia,estadias-reprobar
+cuanto tardan en darme el titulo,titulacion-tiempo-entrega
+olvide la contraseña de la plataforma escolar,plataforma-contrasena
+como activo mi correo institucional,correo-institucional
+hay programas de intercambio al extranjero,movilidad-intercambio
+donde pongo una queja,quejas-sugerencias
+a quien le aviso si me estan acosando,violencia-acoso
+avisan si no hay clases por huracan,avisos-contingencia
+como consulto mi matricula de alumno,matricula
+hay estacionamiento para motos,estacionamiento
+tengo que comprar una laptop para entrar a la carrera,computadora-necesaria
+se me perdio la mochila donde pregunto,objetos-perdidos
