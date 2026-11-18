@@ -81,10 +81,18 @@ CSV `consulta,esperado[,grupo]`; genera `tests/resultados/evaluacion-<nombre>-<f
 | [01 · Requerimientos y alcance](docs/01-requerimientos-y-alcance.md) | Qué hace y qué no, requerimientos, criterios de aceptación y cómo se miden |
 | [02 · Manual técnico](docs/02-manual-tecnico.md) | Arquitectura, modelo de datos, endpoint con ejemplos reales, motor paso a paso con ejemplo trabajado |
 | [03 · Instalación e integración](docs/03-instalacion-e-integracion.md) | CWP, MariaDB, configuración, FTP, importación, primera cuenta, cron, la línea de `footer.inc.php`, ModSecurity, cómo revertir |
-| 04 · Base de conocimiento | **Pendiente** (formato del CSV, redacción de preguntas y variantes, validación por áreas) |
+| [04 · Base de conocimiento](docs/04-base-de-conocimiento.md) | Estado actual, formato del CSV, reglas de contenido, variantes, importar/exportar y validación por áreas |
 | [05 · Plan de pruebas](docs/05-plan-de-pruebas.md) | Suite, evaluación, batería real, casos límite, móvil y accesibilidad, resultados |
-| 06 · Manual de administración | **Pendiente** (uso del panel) |
+| [06 · Manual de usuario del panel](docs/06-manual-administrador.md) | Entrar, roles, tablero, editar y validar preguntas, probador, sin respuesta, áreas, cuentas, exportar y uso en otra PC |
 | [07 · Aviso de privacidad y seguridad](docs/07-aviso-privacidad-y-seguridad.md) | Qué se registra, retención, controles de seguridad y respuesta a incidentes |
+
+## Usar el panel en otra PC (Windows)
+
+1. `git clone https://github.com/victorbau2387-ctrl/buscador-utypcb.git` (repositorio privado).
+2. Clic derecho en `instalar-herramientas.ps1` → **Ejecutar con PowerShell** (una sola vez: PHP 7.4, PHP 8.3 y MariaDB verificados por SHA-256 en `%USERPROFILE%\dev-tools`).
+3. Doble clic en `iniciar-panel.cmd`. La primera vez carga las preguntas y pide crear tu cuenta.
+
+Detalles en [docs/06 §11](docs/06-manual-administrador.md#11-usar-el-panel-en-otra-computadora-windows).
 
 ## Seguridad
 
