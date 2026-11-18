@@ -33,17 +33,7 @@ try {
         $consultas += $n;
     } while ($n === 5000);
 
-    // bf_limite guarda el número de ventana (time / segundos de la ventana) sin fecha. Hoy conviven
-    // ventanas de 60 s (buscador) y de 900 s (login), que tienen magnitudes muy distintas:
-    //   - cualquier fila con ventana < ventana_900_actual - 2 ya venció (sea de 60 s o de 900 s);
-    //   - una fila mayor que ventana_900_actual solo puede ser de 60 s: vence si < ventana_60_actual - 2.
-    $ahora = time();
-    $v900 = intdiv($ahora, 900);
-    $v60 = intdiv($ahora, 60);
-    $limites = Db::ejecutar(
-        'DELETE FROM bf_limite WHERE ventana < ? OR (ventana > ? AND ventana < ?)',
-        [$v900 - 2, $v900, $v60 - 2]
-    );
+    $limites = \Buscador\Support\RateLimiter::limpiar();
     if ($verbose) {
         fwrite(STDOUT, "bf_consulta: $consultas fila(s) anteriores a $limite borradas; bf_limite: $limites contador(es) vencidos.\n");
     }
