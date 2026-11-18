@@ -14,6 +14,10 @@ if (strpos($ruta, '/buscador/') === 0) {
     $publico = realpath(__DIR__ . '/../../public_html/buscador');
     $relativo = substr($ruta, strlen('/buscador/'));
     $archivo = $publico !== false ? realpath($publico . '/' . $relativo) : false;
+    // Carpetas (p. ej. /buscador/admin/) → su index.php, como hace Apache.
+    if ($archivo !== false && is_dir($archivo)) {
+        $archivo = realpath($archivo . '/index.php');
+    }
 
     // Sin salir de public_html/buscador y sin archivos internos (_ruta_privada.php).
     if ($archivo === false || strpos($archivo, $publico . DIRECTORY_SEPARATOR) !== 0 || !is_file($archivo)
