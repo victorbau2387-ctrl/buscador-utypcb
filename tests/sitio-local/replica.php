@@ -44,7 +44,12 @@ if (!is_file($cache)) {
 $html = (string) file_get_contents($cache);
 
 // El widget se sirve desde este servidor local: rutas absolutas para que <base> no las mande al sitio real.
-$local = 'http://' . ($_SERVER['HTTP_HOST'] ?? '127.0.0.1:8080') . '/buscador/';
+// Detrás de un túnel (cloudflared) la página llega por https: se respeta para no mezclar contenido.
+$https = (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https')
+    || strpos((string) ($_SERVER['HTTP_CF_VISITOR'] ?? ''), 'https') !== false
+    || (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+$raiz = ($https ? 'https://' : 'http://') . ($_SERVER['HTTP_HOST'] ?? '127.0.0.1:8080');
+$local = $raiz . '/buscador/';
 define('BF_WIDGET_BASE', $local);
 define('BF_WIDGET_API', $local . 'api.php');
 define('BF_WIDGET_ADMIN', $local . 'admin/');
@@ -56,7 +61,7 @@ $widget = (string) ob_get_clean();
 $aviso = '<div style="position:fixed;left:12px;bottom:12px;z-index:8999;padding:6px 10px;border-radius:8px;'
     . 'background:#071a16;color:#eef3f1;font:12px/1.3 system-ui,sans-serif;opacity:.85">'
     . 'Vista previa local · portada de utypcb.edu.mx + buscador · '
-    . '<a href="' . htmlspecialchars('http://' . ($_SERVER['HTTP_HOST'] ?? '127.0.0.1:8080') . '/pruebas.php', ENT_QUOTES, 'UTF-8')
+    . '<a href="' . htmlspecialchars($raiz . '/pruebas.php', ENT_QUOTES, 'UTF-8')
     . '" style="color:#3fbf9a">página de pruebas</a></div>';
 
 // <base> justo después de <head> para que todo lo relativo resuelva al sitio oficial.
