@@ -27,6 +27,13 @@ $env:BF_CONFIG = "tests/sitio-local/config.local.php"
 C:\Users\Usuario\dev-tools\php83\php.exe private\bin\crear-admin.php
 ```
 
+## Vista previa sobre el sitio real
+
+http://127.0.0.1:8080/replica.php descarga la portada pública de utypcb.edu.mx (caché de 6 h en
+`tests/sitio-local/.cache/`, ignorada por git; `?renovar=1` la vuelve a bajar) y le inserta el widget
+como lo hará `footer.inc.php`. Sirve para ver el botón con los estilos, fuentes y scripts reales del sitio.
+No es parte del producto: el buscador nunca lee el HTML del sitio, solo los `*_data.php`.
+
 ## Levantar el servidor (manual)
 
 Desde la raíz del repositorio, en PowerShell:

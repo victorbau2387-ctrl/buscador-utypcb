@@ -22,3 +22,6 @@ Thumbs.db
 .claude/
 # Informes generados por evaluar.php (se regeneran; el definitivo se adjunta a la entrega)
 tests/resultados/evaluacion-*
+
+# Copia descargada de la portada para la vista previa local (no se versiona)
+tests/sitio-local/.cache/

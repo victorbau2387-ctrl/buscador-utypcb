@@ -453,8 +453,38 @@
     color: var(--texto-mudo, #5c6f69);
 }
 
+.bf-pie p {
+    margin: 0;
+}
+
+.bf-pie-enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .2rem .45rem;
+    margin-top: .25rem !important;
+}
+
 .bf-pie a {
     font-weight: 500;
+    color: var(--texto-mudo, #5c6f69);
+    text-decoration-color: var(--espuma-2, #e2eae7);
+}
+
+.bf-pie a:hover {
+    color: var(--tinta-2, #0d2b24);
+    text-decoration-color: var(--linea, #3fbf9a);
+}
+
+.bf-acceso {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+}
+
+.bf-acceso .bf-icono {
+    width: 1em;
+    height: 1em;
 }
 
 /* Solo para lectores de pantalla */

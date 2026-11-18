@@ -9,6 +9,7 @@
  *   define('BF_WIDGET_API', '/buscador/api.php');   // URL del endpoint (misma web, sin CORS)
  *   define('BF_WIDGET_BASE', '/buscador/');         // carpeta pública de widget.css / widget.js
  *   define('BF_WIDGET_ICONOS', ['buscar' => 'i-buscar', 'cerrar' => 'i-cerrar', 'enviar' => 'i-enviar']);
+ *   define('BF_WIDGET_ADMIN', false);  // oculta el enlace "Acceso para personal" (por defecto: BASE . 'admin/')
  *
  * Compatible con PHP 7.4 y 8.x. Todo se ejecuta dentro de una función anónima
  * para no dejar variables sueltas en el ámbito de footer.inc.php.
@@ -28,6 +29,8 @@ define('BF_WIDGET_INCLUIDO', true);
     if ($base === '' || substr($base, -1) !== '/') {
         $base .= '/';
     }
+    // Enlace al panel (login) en el pie del widget. false lo oculta.
+    $admin = defined('BF_WIDGET_ADMIN') ? BF_WIDGET_ADMIN : $base . 'admin/';
 
     // Versión para invalidar caché: fecha de modificación de cada archivo.
     $ver = static function ($archivo) {
@@ -96,7 +99,19 @@ define('BF_WIDGET_INCLUIDO', true);
             <p class="bf-estado" id="bf-estado" role="status" aria-live="polite"></p>
         </div>
 
-        <p class="bf-pie">Buscador de preguntas frecuentes · respuestas tomadas de información oficial.</p>
+        <div class="bf-pie">
+            <p>Respuestas tomadas de información oficial de la universidad.</p>
+            <p class="bf-pie-enlaces">
+                <a href="<?= $e($base . 'privacidad.php') ?>" target="_blank" rel="noopener">Aviso de privacidad</a>
+                <?php if ($admin) : ?>
+                    <span aria-hidden="true">·</span>
+                    <a href="<?= $e((string) $admin) ?>" class="bf-acceso" target="_blank" rel="noopener">
+                        <svg class="bf-icono" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+                        Acceso para personal
+                    </a>
+                <?php endif; ?>
+            </p>
+        </div>
     </div>
 </div>
 <script src="<?= $e($base . 'widget.js?v=' . $ver('widget.js')) ?>" defer></script>
