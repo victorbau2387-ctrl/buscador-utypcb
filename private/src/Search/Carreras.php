@@ -15,12 +15,18 @@ final class Carreras
     private const GENERICAS = [
         'ingenieria', 'licenciatura', 'en', 'de', 'y', 'la', 'el', 'los', 'tecnico', 'superior', 'universitario',
         'desarrollo', 'innovacion', 'digital', 'digitales', 'procesos', 'manejo', 'entornos', 'negocios', 'virtuales',
+        'informacion', // "quiero información sobre becas" no es la carrera de Tecnologías de la Información
     ];
 
     /** Palabras que indican que se pregunta por una oferta académica. */
     private const INTENCION_CARRERA = [
         'carrera', 'carreras', 'licenciatura', 'ingenieria', 'estudiar', 'estudio', 'ofrecen', 'tienen', 'hay',
         'imparten', 'existe', 'oferta', 'programa', 'quiero', 'busco',
+    ];
+
+    /** Palabras que indican un servicio (de salud, atención) y no una oferta académica. */
+    private const SERVICIO = [
+        'servicio', 'servicios', 'medico', 'medica', 'consultorio', 'clinica', 'atencion', 'cita', 'citas', 'salud', 'area', 'departamento',
     ];
 
     /** @var array<string,array<string,mixed>>|null slug => carrera con 'claves' */
@@ -87,7 +93,8 @@ final class Carreras
     {
         $lex = Texto::lexico();
         $palabras = Texto::palabras($consulta);
-        if (in_array('servicio', $palabras, true) || in_array('medico', $palabras, true)) {
+        // Si habla de un servicio de salud ("servicio de enfermería", "consultorio de psicología"), no es una carrera.
+        if (array_intersect($palabras, self::SERVICIO)) {
             return null;
         }
         foreach ($palabras as $p) {

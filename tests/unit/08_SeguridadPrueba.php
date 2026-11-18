@@ -27,11 +27,7 @@ prueba('huellaVisitante: hash SHA-256 con sal; no contiene la IP', function () {
     }
 });
 
-conocido(
-    'config de ejemplo: sitio.ruta_datos apunta a public_html junto a private/',
-    'private/config.example.php usa __DIR__ . \'/../../public_html\' (dos niveles arriba): con private/ al lado de public_html '
-    . 'resuelve a una carpeta inexistente y las respuestas dinámicas quedan vacías sin error. Debería ser \'/../public_html\'.',
-    function () {
+prueba('config de ejemplo: sitio.ruta_datos apunta a public_html junto a private/', function () {
         $c = require __DIR__ . '/../../private/config.example.php';
         $esperada = str_replace('\\', '/', dirname(__DIR__, 2) . '/public_html');
         $real = realpath((string) $c['sitio']['ruta_datos']);

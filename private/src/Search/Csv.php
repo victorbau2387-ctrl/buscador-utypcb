@@ -26,7 +26,7 @@ final class Csv
         if ($fh === false) {
             throw new \RuntimeException('No se pudo abrir ' . $ruta);
         }
-        $encabezado = fgetcsv($fh, 0, ',', '"', '\\');
+        $encabezado = fgetcsv($fh, 0, ',', '"', '');
         if (!$encabezado) {
             fclose($fh);
             return [];
@@ -34,7 +34,7 @@ final class Csv
         $encabezado[0] = (string) preg_replace('/^\xEF\xBB\xBF/', '', (string) $encabezado[0]); // BOM de Excel
         $encabezado = array_map('trim', $encabezado);
         $filas = [];
-        while (($f = fgetcsv($fh, 0, ',', '"', '\\')) !== false) {
+        while (($f = fgetcsv($fh, 0, ',', '"', '')) !== false) {
             if ($f === [null] || trim(implode('', $f)) === '') {
                 continue;
             }

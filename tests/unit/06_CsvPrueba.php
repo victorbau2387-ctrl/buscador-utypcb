@@ -39,11 +39,7 @@ prueba('leer: archivo vacío y archivo inexistente', function () {
     });
 });
 
-conocido(
-    'leer: una barra invertida al final de un campo entre comillas no debe unir filas',
-    'Csv::leer() usa "\\\\" como carácter de escape de fgetcsv(); Excel no escapa así, de modo que un campo como '
-    . '"C:\\carpeta\\" se traga el resto de la fila y la siguiente. Debería usar escape vacío ("").',
-    function () {
+prueba('leer: una barra invertida al final de un campo entre comillas no debe unir filas', function () {
         $f = archivoTemporal("a,b\n\"C:\\carpeta\\\",x\ny,z\n");
         $filas = Csv::leer($f);
         igual(2, count($filas));

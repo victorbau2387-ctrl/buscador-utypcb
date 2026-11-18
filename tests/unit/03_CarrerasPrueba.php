@@ -50,11 +50,7 @@ prueba('detectar: sin carrera o solo palabras genéricas → null', function () 
     igual(null, Carreras::detectar(''));
 });
 
-conocido(
-    'detectar: "información" (incluida la abreviatura "info") no debe señalar a Tecnologías de la Información',
-    'Carreras::activas() toma "informacion" como clave exclusiva de ITI y "info" se expande a "informacion": '
-    . '"quiero informacion sobre becas" fija la carrera ITI y el siguiente "y el tríptico?" entrega el de ITI.',
-    function () {
+prueba('detectar: "información" (incluida la abreviatura "info") no debe señalar a Tecnologías de la Información', function () {
         igual(null, Carreras::detectar('quiero informacion sobre becas'));
         igual(null, Carreras::detectar('info de becas'));
     }
@@ -79,11 +75,7 @@ prueba('noOfertada: preguntas sin carrera no ofertada → null', function () {
     igual(null, Carreras::noOfertada('ingenieria civil'));
 });
 
-conocido(
-    'noOfertada: "consultorio de psicología" es un servicio, no una carrera',
-    'Carreras::noOfertada() solo excluye las palabras literales "servicio" y "medico"; "consultorio" (sinónimo de médico '
-    . 'en el léxico) no se excluye, así que responde "no ofrecemos Psicología".',
-    function () {
+prueba('noOfertada: "consultorio de psicología" es un servicio, no una carrera', function () {
         igual(null, Carreras::noOfertada('consultorio de psicologia'));
     }
 );

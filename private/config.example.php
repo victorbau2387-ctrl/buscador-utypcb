@@ -16,7 +16,7 @@ return [
     // Ruta a la carpeta del sitio donde están calendario_data.php, carreras_data.php, etc.
     // Se leen con require_once: única fuente de verdad, no se duplican.
     'sitio' => [
-        'ruta_datos' => __DIR__ . '/../../public_html',
+        'ruta_datos' => __DIR__ . '/../public_html', // private/ va junto a public_html
         'url_base'   => 'https://utypcb.edu.mx',
     ],
 

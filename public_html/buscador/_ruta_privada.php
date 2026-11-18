@@ -1,6 +1,6 @@
 <?php
 // Ubicación de la carpeta private/. En el hosting queda al lado de public_html:
-//   /home/USUARIO/private-buscador/   y   /home/USUARIO/public_html/buscador/
+//   /home/USUARIO/private/   y   /home/USUARIO/public_html/buscador/
 // Ajusta solo si la instalas en otra ruta.
 if (!defined('BF_RUTA_PRIVADA')) {
     $bfEnv = getenv('BF_RUTA_PRIVADA');

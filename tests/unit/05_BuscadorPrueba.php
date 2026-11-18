@@ -145,11 +145,7 @@ prueba('contexto: "información de la carrera de civil" → "y el tríptico?" en
     igual('https://utypcb.edu.mx/docs/tripticos/civil.pdf', $r2['respuesta']['enlaces'][0]['url']);
 });
 
-conocido(
-    'contexto: "info de civil" → "y el tríptico?" (consulta corta solo con la carrera)',
-    '"info" se expande a "informacion" (palabra vacía) y "civil" no está en el vocabulario de las preguntas: '
-    . 'quedan 0 coincidencias y el motor responde sin_respuesta aunque detectó la carrera. Debería responder carrera-detalle.',
-    function () {
+prueba('contexto: "info de civil" → "y el tríptico?" (consulta corta solo con la carrera)', function () {
         $m = motorPrueba();
         $r1 = $m->buscar('info de civil');
         igual(SLUG_CIVIL, $r1['contexto']['carrera']);
@@ -166,11 +162,7 @@ prueba('contexto: "info de civil" conserva la carrera para el siguiente mensaje'
     igual('https://utypcb.edu.mx/docs/tripticos/civil.pdf', $r2['respuesta']['enlaces'][0]['url']);
 });
 
-conocido(
-    'contexto: una carrera en contexto no debe ocultar una carrera no ofertada',
-    'Buscador::buscar() solo llama a Carreras::noOfertada() si $carrera === null, y el contexto la rellena: '
-    . 'tras "info de civil", "¿tienen enfermería?" responde servicio-medico en vez de no_ofertada.',
-    function () {
+prueba('contexto: una carrera en contexto no debe ocultar una carrera no ofertada', function () {
         $r = motorPrueba()->buscar('¿tienen enfermería?', ['carrera' => SLUG_CIVIL]);
         igual('no_ofertada', $r['resultado']);
     }

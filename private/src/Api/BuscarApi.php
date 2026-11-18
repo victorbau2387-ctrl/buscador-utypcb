@@ -53,7 +53,11 @@ final class BuscarApi
             $contexto = isset($cuerpo['contexto']) && is_array($cuerpo['contexto']) ? $cuerpo['contexto'] : [];
             switch ($accion) {
                 case 'buscar':
-                    self::buscar((string) ($cuerpo['consulta'] ?? ''), $contexto);
+                    if (!isset($cuerpo['consulta']) || !is_string($cuerpo['consulta'])) {
+                        Http::json(['ok' => false, 'error' => 'Escribe tu pregunta como texto.'], 422);
+                        return;
+                    }
+                    self::buscar($cuerpo['consulta'], $contexto);
                     return;
                 case 'ver':
                     self::ver((int) ($cuerpo['id'] ?? 0), $contexto);

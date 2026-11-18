@@ -353,11 +353,7 @@ prueba('consulta que no es texto no rompe el servicio', function () use ($url, $
     }
 });
 
-conocido(
-    'consulta que no es texto (arreglo) → 422',
-    'BuscarApi::atender() hace (string) $cuerpo[\'consulta\']: un arreglo se convierte en "Array" (aviso en el log) y se busca '
-    . 'como si fuera texto. Debería rechazarse con 422 si no es string.',
-    function () use ($url, $origen, $reiniciarLimite) {
+prueba('consulta que no es texto (arreglo) → 422', function () use ($url, $origen, $reiniciarLimite) {
         $reiniciarLimite();
         igual(422, post($url, ['accion' => 'buscar', 'consulta' => ['a' => 1]], $origen)['estado']);
     }

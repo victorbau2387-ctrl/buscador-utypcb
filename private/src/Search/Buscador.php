@@ -82,6 +82,18 @@ final class Buscador
             return $this->fin($base, $inicio);
         }
 
+        // "info de civil": se nombró una carrera y nada más (o nada que la base reconozca) → detalle de esa carrera.
+        $detalleId = $carrera !== null && !$usaContexto ? $this->idPorHandler('carrera_detalle') : null;
+        $sinTema = !$terminos || !array_filter($terminos, [$this->indice, 'conoce']);
+
+        if ($sinTema && $detalleId !== null) {
+            $base['resultado'] = 'respondida';
+            $base['faq_id'] = $detalleId;
+            $base['confianza'] = 0.9;
+            $base['respuesta'] = $this->armarRespuesta($detalleId, $consulta, $carrera);
+            return $this->fin($base, $inicio);
+        }
+
         if (!$terminos) {
             $base['canalizar'] = $this->contactoGeneral();
             return $this->fin($base, $inicio);
@@ -138,6 +150,16 @@ final class Buscador
             'confianza'   => 1.0,
             'faq_id'      => $id,
         ];
+    }
+
+    private function idPorHandler(string $handler): ?int
+    {
+        foreach ($this->indice->faqs() as $id => $faq) {
+            if (($faq['handler'] ?? '') === $handler) {
+                return (int) $id;
+            }
+        }
+        return null;
     }
 
     /** @param string[] $terminos */
