@@ -47,7 +47,7 @@ if "%BF_REIMPORTAR%"=="1" (
 if errorlevel 1 (
   echo.
   echo  ==== Primera vez: crea tu cuenta del panel ====
-  echo  Elige el rol superadmin. La contrasena se ve como asteriscos (o nada) al escribirla.
+  echo  Elige el rol superadmin. La contrasena se ve como asteriscos, o no se ve, al escribirla.
   echo.
   "%PHP%" private\bin\crear-admin.php
 )
