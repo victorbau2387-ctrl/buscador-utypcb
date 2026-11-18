@@ -9,8 +9,10 @@
         btn.addEventListener('click', function () {
             var ver = campo.type === 'password';
             campo.type = ver ? 'text' : 'password';
-            btn.textContent = ver ? 'Ocultar' : 'Mostrar';
+            var etiqueta = ver ? 'Ocultar contraseña' : 'Mostrar contraseña';
             btn.setAttribute('aria-pressed', ver ? 'true' : 'false');
+            btn.setAttribute('aria-label', etiqueta);
+            btn.setAttribute('title', etiqueta);
             campo.focus();
         });
     });

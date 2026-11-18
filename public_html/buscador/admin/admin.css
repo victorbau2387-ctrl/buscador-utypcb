@@ -199,10 +199,14 @@ body.acceso { min-height: 100vh; background: var(--espuma); }
 .acceso-form input { padding: .8rem .9rem; font-size: 1.02rem; background: var(--espuma); border-color: var(--espuma-2); }
 .acceso-form input:focus { background: var(--blanco); border-color: var(--linea); }
 .campo-clave { position: relative; }
-.campo-clave input { padding-right: 5.5rem; }
-.ver-clave { position: absolute; right: .35rem; top: 50%; transform: translateY(-50%); min-height: 0; padding: .35rem .75rem;
-  font-size: .8rem; background: var(--blanco); color: var(--tinta-2); border: 1.5px solid var(--espuma-2); }
-.ver-clave:hover { background: var(--espuma-2); color: var(--tinta); border-color: var(--tinta-2); }
+.campo-clave input { padding-right: 3.25rem; }
+.ver-clave { position: absolute; right: .3rem; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center;
+  width: 2.5rem; height: 2.5rem; min-height: 0; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--texto-mudo); }
+.ver-clave:hover { background: var(--espuma-2); color: var(--tinta-2); }
+.ver-clave .ojo-cerrado { display: none; }
+.ver-clave[aria-pressed="true"] { color: var(--tinta-2); }
+.ver-clave[aria-pressed="true"] .ojo-abierto { display: none; }
+.ver-clave[aria-pressed="true"] .ojo-cerrado { display: block; }
 .acceso-boton { width: 100%; margin-top: .4rem; padding: .85rem 1rem; font-size: 1.02rem; background: var(--grad-sol); border-color: transparent;
   color: #1a0d00; box-shadow: 0 10px 24px -10px rgba(255, 122, 0, .8); }
 .acceso-boton:hover { background: var(--grad-sol); color: #1a0d00; border-color: transparent; filter: brightness(1.05); }
