@@ -1,0 +1,11 @@
+consulta,esperado,grupo
+cuanto sale la inscripcion,inscripcion-costo,
+q becas dan,becas-tipos,
+kiero estudiar enfermeria,no_ofertada,
+a como esta el dolar hoy,sin_respuesta,
+cuando salimos de vacasiones en diciembre,calendario-vacaciones,
+que documentos llevo para sacar la ficha,admision-requisitos,
+hay equipo de futbol?,deportes,
+examen,calendario-evaluaciones|admision-requisitos,
+informacion de la carrera de civil,carrera-detalle,conv1
+y el triptico?,tripticos,conv1
