@@ -1,6 +1,8 @@
 # Buscador de preguntas frecuentes · UTyP Coyuca de Benítez
 
 > 🦊 **¿Primera vez?** Sigue la [**Guía paso a paso de instalación**](GUIA-DE-INSTALACION.md): explica todo desde cero, desde abrir la carpeta hasta entrar al panel.
+>
+> 🗺️ **¿Qué hace cada carpeta?** Lee [**QUE-HACE-CADA-CARPETA.md**](QUE-HACE-CADA-CARPETA.md): cómo funciona por dentro y para qué sirve cada archivo, explicado fácil.
 
 Buscador de preguntas frecuentes con comprensión tolerante para el sitio de la Universidad Tecnológica y Politécnica de Coyuca de Benítez. El visitante escribe con sus palabras (con faltas, abreviaturas de chat o sin acentos) y recibe la respuesta oficial validada, sugerencias ("¿Quisiste decir…?"), el aviso de que una carrera no se ofrece, o la canalización al área responsable.
 

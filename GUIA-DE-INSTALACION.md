@@ -208,6 +208,11 @@ Algunas instrucciones te piden «escribir un comando». Para eso se usa una vent
 
 ## 🧭 Extra: ver los códigos del programa
 
+> 🗺️ **¿Qué hace cada carpeta y cada archivo?** Está todo explicado, con ejemplos, en
+> **[QUE-HACE-CADA-CARPETA.md](QUE-HACE-CADA-CARPETA.md)**: cómo funciona el buscador por dentro, para
+> qué sirve cada archivo y qué tocar para cambiar algo.
+
+
 1. Descarga e instala **Visual Studio Code** desde **https://code.visualstudio.com**: botón azul de
    descarga, luego **Siguiente, Siguiente… Instalar**.
 2. Ábrelo y ve al menú **`Archivo` → `Abrir carpeta…`** y elige **`C:\buscador-utypcb-main`**.
