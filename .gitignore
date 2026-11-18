@@ -1,0 +1,19 @@
+# Configuración real y secretos: nunca al repositorio
+private/config.php
+.env
+# Datos generados en ejecución
+private/cache/*
+!private/cache/.gitkeep
+private/logs/*
+!private/logs/.gitkeep
+tests/resultados/*.local.*
+# Respaldos y bases locales
+*.sql.gz
+*.sqlite
+*.db
+dump*.sql
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
