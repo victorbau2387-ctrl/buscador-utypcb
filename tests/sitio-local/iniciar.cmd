@@ -24,7 +24,9 @@ if not exist "%PHP%" (
 if errorlevel 1 (
   echo Iniciando MariaDB en 127.0.0.1:3307 ...
   start "MariaDB local" /min "%MDB%\mysqld.exe" --defaults-file="%DEV%\mariadb-data\my.ini" --bind-address=127.0.0.1 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-  timeout /t 5 /nobreak >nul
+  rem Espera hasta 30 s a que MariaDB acepte conexiones (sin depender del comando timeout).
+  "%PHP%" -r "for($i=0;$i<60;$i++){if(@fsockopen('127.0.0.1',3307)){exit(0);}usleep(500000);}exit(1);"
+  if errorlevel 1 ( echo MariaDB no arranco. Cierra esta ventana y vuelve a intentarlo. & pause & exit /b 1 )
 )
 
 echo Preparando la base de datos ...
