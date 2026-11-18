@@ -27,9 +27,11 @@ if (PHP_SAPI !== 'cli') {
     exit;
 }
 
-$raiz = dirname(__DIR__, 2);
+$raiz = dirname(__DIR__, 2);      // raíz del repositorio (en el servidor, la carpeta que contiene a private/)
+$privada = dirname(__DIR__);       // private/ (en el servidor puede llamarse private-buscador/)
 $op = ['csv' => false, 'bd' => false, 'interactivo' => false, 'sin-informe' => false, 'conocimiento' => $raiz . '/conocimiento',
-       'config' => '', 'nombre' => '', 'salida' => $raiz . '/tests/resultados', 'minimo' => ''];
+       'config' => '', 'nombre' => '', 'minimo' => '',
+       'salida' => is_dir($raiz . '/tests') ? $raiz . '/tests/resultados' : $privada . '/logs'];
 $archivo = '';
 foreach (array_slice($argv, 1) as $a) {
     if (preg_match('/^--([a-z-]+)(?:=(.*))?$/', $a, $m)) {
@@ -50,7 +52,7 @@ if (!empty($op['ayuda'])) {
 }
 
 // --------------------------------------------------------------- configuración
-$configPropia = is_file($raiz . '/private/config.php');
+$configPropia = is_file($privada . '/config.php');
 if ($op['config'] !== '') {
     putenv('BF_CONFIG=' . $op['config']);
 } elseif (getenv('BF_CONFIG')) {
@@ -68,7 +70,7 @@ use Buscador\Search\Repositorio;
 use Buscador\Search\Texto;
 use Buscador\Support\Config;
 
-$rutaConfig = getenv('BF_CONFIG') ?: $raiz . '/private/config.php';
+$rutaConfig = getenv('BF_CONFIG') ?: $privada . '/config.php';
 
 // --------------------------------------------------------------- base de conocimiento
 $fuente = 'csv';
