@@ -18,8 +18,6 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Worktrees de agentes locales
-.claude/
 # Informes generados por evaluar.php (se regeneran; el definitivo se adjunta a la entrega)
 tests/resultados/evaluacion-*
 
