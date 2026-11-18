@@ -129,6 +129,7 @@ final class Indice
             $mejor = null;
             $mejorDist = $max + 1;
             foreach ($this->formas as $f => $raiz) {
+                $f = (string) $f; // claves numéricas ("2026") llegan como int
                 if ($f[0] !== $forma[0] || abs(strlen($f) - strlen($forma)) > $max || !isset($this->idf[$raiz])) {
                     continue;
                 }
@@ -206,12 +207,17 @@ final class Indice
             $conf[$id] = 0.55 * ($cubierto / $pesoQ) + 0.45 * $mejorFrase;
             $bm25[$id] = $s;
         }
-        // Desempate por BM25.
+        // Desempate por BM25 ANTES de recortar a 1.0 (si no, dos filas en 1.0 empatan al azar).
         $maxBm = $bm25 ? max($bm25) : 1.0;
+        $orden = [];
         foreach ($conf as $id => $c) {
-            $conf[$id] = min(1.0, $c + 0.01 * ($bm25[$id] / ($maxBm ?: 1.0)));
+            $orden[$id] = $c + 0.01 * ($bm25[$id] / ($maxBm ?: 1.0));
         }
-        arsort($conf);
-        return $conf;
+        arsort($orden);
+        $res = [];
+        foreach ($orden as $id => $c) {
+            $res[$id] = min(1.0, $c);
+        }
+        return $res;
     }
 }

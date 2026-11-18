@@ -57,8 +57,8 @@ prueba('detectar: "información" (incluida la abreviatura "info") no debe señal
 );
 
 prueba('noOfertada: carreras que no se imparten', function () {
-    igual('Enfermería', Carreras::noOfertada('¿tienen enfermería?'));
-    igual('Enfermería', Carreras::noOfertada('enfermeria'));
+    igual('Medicina', Carreras::noOfertada('¿tienen medicina?'));
+    igual('Medicina', Carreras::noOfertada('medicina'));
     igual('Derecho', Carreras::noOfertada('quiero estudiar derecho'));
     igual('Psicología', Carreras::noOfertada('psicologia'));
     igual('Mecatrónica', Carreras::noOfertada('hay mecatronica?'));

@@ -46,6 +46,6 @@ return [
         'nombre' => 'Servicios Escolares',
         'correo' => '',
         'telefono' => '',
-        'url' => 'https://utypcb.edu.mx/contacto.php',
+        'url' => 'https://utypcb.edu.mx/', // contacto.php da 404 en el sitio actual (nov. 2026)
     ],
 ];

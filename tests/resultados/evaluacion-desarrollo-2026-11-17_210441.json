@@ -1,0 +1,1431 @@
+{
+    "entorno": {
+        "php": "8.3.36",
+        "so": "Windows 10.0",
+        "fecha": "2026-11-17 21:04:40 CST",
+        "fuente": "csv",
+        "fuente_detalle": "CSV conocimiento/preguntas.csv",
+        "config": "tests/sitio-local/config.local.php",
+        "preguntas_base": 127,
+        "umbrales": {
+            "umbral_respuesta": 0.62,
+            "umbral_sugerencias": 0.3,
+            "max_sugerencias": 3
+        }
+    },
+    "resumen": {
+        "archivo": "tests/preguntas/desarrollo.csv",
+        "nombre": "desarrollo",
+        "total": 68,
+        "aciertos_directos": 56,
+        "aciertos_en_sugerencia": 6,
+        "fallos": 6,
+        "pct_directos": 82.35,
+        "pct_con_sugerencias": 91.18,
+        "resultados": {
+            "respondida": 52,
+            "sugerencias": 11,
+            "sin_respuesta": 1,
+            "no_ofertada": 4
+        },
+        "tiempo_ms": {
+            "p50": 21.65,
+            "p95": 22.26,
+            "max": 26.67,
+            "promedio": 21.81
+        },
+        "criterio_85_y_2s": "no aplica (se requieren al menos 100 preguntas reales)"
+    },
+    "matriz": {
+        "admision": {
+            "total": 13,
+            "directo": 12,
+            "sugerencia": 0,
+            "fallo": 1
+        },
+        "becas": {
+            "total": 2,
+            "directo": 0,
+            "sugerencia": 2,
+            "fallo": 0
+        },
+        "calendario": {
+            "total": 6,
+            "directo": 5,
+            "sugerencia": 1,
+            "fallo": 0
+        },
+        "carreras": {
+            "total": 11,
+            "directo": 9,
+            "sugerencia": 0,
+            "fallo": 2
+        },
+        "contacto": {
+            "total": 3,
+            "directo": 3,
+            "sugerencia": 0,
+            "fallo": 0
+        },
+        "costos": {
+            "total": 6,
+            "directo": 5,
+            "sugerencia": 1,
+            "fallo": 0
+        },
+        "deportes": {
+            "total": 1,
+            "directo": 1,
+            "sugerencia": 0,
+            "fallo": 0
+        },
+        "estadias": {
+            "total": 3,
+            "directo": 3,
+            "sugerencia": 0,
+            "fallo": 0
+        },
+        "inscripcion": {
+            "total": 4,
+            "directo": 3,
+            "sugerencia": 1,
+            "fallo": 0
+        },
+        "institucional": {
+            "total": 1,
+            "directo": 1,
+            "sugerencia": 0,
+            "fallo": 0
+        },
+        "no_ofertada": {
+            "total": 4,
+            "directo": 4,
+            "sugerencia": 0,
+            "fallo": 0
+        },
+        "servicios": {
+            "total": 3,
+            "directo": 3,
+            "sugerencia": 0,
+            "fallo": 0
+        },
+        "sin_respuesta": {
+            "total": 3,
+            "directo": 1,
+            "sugerencia": 0,
+            "fallo": 2
+        },
+        "titulacion": {
+            "total": 1,
+            "directo": 1,
+            "sugerencia": 0,
+            "fallo": 0
+        },
+        "tramites": {
+            "total": 6,
+            "directo": 4,
+            "sugerencia": 1,
+            "fallo": 1
+        },
+        "transparencia": {
+            "total": 1,
+            "directo": 1,
+            "sugerencia": 0,
+            "fallo": 0
+        }
+    },
+    "avisos": [],
+    "consultas": [
+        {
+            "fila": 2,
+            "consulta": "buenas tardes cuanto me va a costar la ficha para el examen",
+            "grupo": "",
+            "esperado": "costos-ficha",
+            "categoria": "costos",
+            "resultado": "respondida",
+            "obtenido": "costos-ficha",
+            "confianza": 0.759,
+            "calificacion": "directo",
+            "ms": 26.67,
+            "terminos": [
+                "kuanto",
+                "kosto",
+                "ficha",
+                "examen"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 3,
+            "consulta": "oigan y la inscripcion en cuanto anda",
+            "grupo": "",
+            "esperado": "inscripcion-costo",
+            "categoria": "costos",
+            "resultado": "respondida",
+            "obtenido": "inscripcion-costo",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.72,
+            "terminos": [
+                "inskri",
+                "kosto"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 4,
+            "consulta": "cuanto se paga cada cuatrimestre ahi",
+            "grupo": "",
+            "esperado": "costos-cuatrimestre",
+            "categoria": "costos",
+            "resultado": "respondida",
+            "obtenido": "costos-cuatrimestre",
+            "confianza": 0.87,
+            "calificacion": "directo",
+            "ms": 21.57,
+            "terminos": [
+                "kosto",
+                "kada",
+                "kuatri"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 5,
+            "consulta": "mi mama quiere saber cuanto es todo lo que hay que pagar para entrar",
+            "grupo": "",
+            "esperado": "costos-total",
+            "categoria": "costos",
+            "resultado": "sugerencias",
+            "obtenido": "sugerencias: costos-total, institucional-nombre, costos-aranceles",
+            "confianza": 0.598,
+            "calificacion": "sugerencia",
+            "ms": 21.68,
+            "terminos": [
+                "mama",
+                "kiere",
+                "kosto",
+                "total",
+                "kosto",
+                "admisi"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 6,
+            "consulta": "a que cuenta le hago la transferencia",
+            "grupo": "",
+            "esperado": "pagos-como-pagar",
+            "categoria": "costos",
+            "resultado": "respondida",
+            "obtenido": "pagos-como-pagar",
+            "confianza": 0.816,
+            "calificacion": "directo",
+            "ms": 21.74,
+            "terminos": [
+                "kuenta",
+                "transf"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 7,
+            "consulta": "se puede pagar en efectivo en la escuela",
+            "grupo": "",
+            "esperado": "pagos-como-pagar",
+            "categoria": "costos",
+            "resultado": "respondida",
+            "obtenido": "pagos-como-pagar",
+            "confianza": 0.892,
+            "calificacion": "directo",
+            "ms": 21.71,
+            "terminos": [
+                "kosto",
+                "efekti"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 8,
+            "consulta": "ya hice el deposito que sigue con el comprobante",
+            "grupo": "",
+            "esperado": "pagos-recibo-oficial",
+            "categoria": "tramites",
+            "resultado": "sugerencias",
+            "obtenido": "sugerencias: pagos-recibo-oficial, pagos-como-pagar, admision-aceptado-siguientes-pasos",
+            "confianza": 0.354,
+            "calificacion": "sugerencia",
+            "ms": 21.83,
+            "terminos": [
+                "ise",
+                "deposi",
+                "sigue",
+                "kompro"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 9,
+            "consulta": "que pasos hay que seguir para ser alumno de nuevo ingreso",
+            "grupo": "",
+            "esperado": "admision-proceso",
+            "categoria": "admision",
+            "resultado": "respondida",
+            "obtenido": "admision-proceso",
+            "confianza": 0.662,
+            "calificacion": "directo",
+            "ms": 21.67,
+            "terminos": [
+                "paso",
+                "seguir",
+                "alumno",
+                "admisi"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 10,
+            "consulta": "pasenme la pagina donde me registro como aspirante",
+            "grupo": "",
+            "esperado": "admision-preregistro",
+            "categoria": "admision",
+            "resultado": "respondida",
+            "obtenido": "admision-preregistro",
+            "confianza": 0.723,
+            "calificacion": "directo",
+            "ms": 21.57,
+            "terminos": [
+                "pasenm",
+                "pajina",
+                "prerej",
+                "admisi"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 11,
+            "consulta": "cuando toca el examen de admision",
+            "grupo": "",
+            "esperado": "admision-examen-fecha",
+            "categoria": "admision",
+            "resultado": "respondida",
+            "obtenido": "admision-examen-fecha",
+            "confianza": 0.629,
+            "calificacion": "directo",
+            "ms": 23.25,
+            "terminos": [
+                "kalend",
+                "toka",
+                "examen",
+                "admisi"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 12,
+            "consulta": "el examen de admision es presencial",
+            "grupo": "",
+            "esperado": "admision-examen",
+            "categoria": "admision",
+            "resultado": "respondida",
+            "obtenido": "admision-examen",
+            "confianza": 0.94,
+            "calificacion": "directo",
+            "ms": 21.69,
+            "terminos": [
+                "examen",
+                "admisi",
+                "presen"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 13,
+            "consulta": "cuanto dura el test psicometrico",
+            "grupo": "",
+            "esperado": "admision-psicometrico",
+            "categoria": "admision",
+            "resultado": "respondida",
+            "obtenido": "admision-psicometrico",
+            "confianza": 0.871,
+            "calificacion": "directo",
+            "ms": 21.59,
+            "terminos": [
+                "kuanto",
+                "durasi",
+                "test",
+                "psikom"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 14,
+            "consulta": "no tengo computadora en mi casa para el examen que hago",
+            "grupo": "",
+            "esperado": "admision-sin-computadora",
+            "categoria": "admision",
+            "resultado": "respondida",
+            "obtenido": "admision-sin-computadora",
+            "confianza": 0.687,
+            "calificacion": "directo",
+            "ms": 21.49,
+            "terminos": [
+                "komput",
+                "kada",
+                "examen"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 15,
+            "consulta": "hay alguna guia para prepararme para el examen",
+            "grupo": "",
+            "esperado": "admision-guia",
+            "categoria": "admision",
+            "resultado": "respondida",
+            "obtenido": "admision-guia",
+            "confianza": 0.779,
+            "calificacion": "directo",
+            "ms": 21.45,
+            "terminos": [
+                "guia",
+                "prepar",
+                "examen"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 16,
+            "consulta": "donde publican quienes quedaron",
+            "grupo": "",
+            "esperado": "admision-resultados",
+            "categoria": "admision",
+            "resultado": "respondida",
+            "obtenido": "admision-resultados",
+            "confianza": 0.737,
+            "calificacion": "directo",
+            "ms": 21.57,
+            "terminos": [
+                "publik",
+                "kien",
+                "result"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 17,
+            "consulta": "cuantos puntos necesito sacar para que me acepten",
+            "grupo": "",
+            "esperado": "admision-puntaje-minimo",
+            "categoria": "admision",
+            "resultado": "respondida",
+            "obtenido": "admision-puntaje-minimo",
+            "confianza": 0.644,
+            "calificacion": "directo",
+            "ms": 21.68,
+            "terminos": [
+                "kuanto",
+                "puntaj",
+                "rekisi",
+                "tramit",
+                "result"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 18,
+            "consulta": "y si repruebo el examen de admision lo puedo volver a presentar",
+            "grupo": "",
+            "esperado": "admision-no-aceptado",
+            "categoria": "admision",
+            "resultado": "respondida",
+            "obtenido": "admision-no-aceptado",
+            "confianza": 0.767,
+            "calificacion": "directo",
+            "ms": 21.54,
+            "terminos": [
+                "reprue",
+                "examen",
+                "admisi",
+                "reingr",
+                "presen"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 19,
+            "consulta": "sigo en el cobach puedo presentar examen",
+            "grupo": "",
+            "esperado": "admision-bachillerato-en-curso",
+            "categoria": "admision",
+            "resultado": "sugerencias",
+            "obtenido": "sugerencias: admision-examen, admision-bachillerato-en-curso, tramite-extraordinario",
+            "confianza": 0.545,
+            "calificacion": "fallo",
+            "ms": 21.53,
+            "terminos": [
+                "sigo",
+                "bachiy",
+                "presen",
+                "examen"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 20,
+            "consulta": "que documentos me van a pedir cuando haga el registro",
+            "grupo": "",
+            "esperado": "admision-requisitos",
+            "categoria": "admision",
+            "resultado": "respondida",
+            "obtenido": "admision-requisitos",
+            "confianza": 0.74,
+            "calificacion": "directo",
+            "ms": 21.52,
+            "terminos": [
+                "rekisi",
+                "rekisi",
+                "kalend",
+                "prerej"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 21,
+            "consulta": "que papeles entrego cuando ya me inscriba",
+            "grupo": "",
+            "esperado": "inscripcion-documentos",
+            "categoria": "inscripcion",
+            "resultado": "respondida",
+            "obtenido": "inscripcion-documentos",
+            "confianza": 0.883,
+            "calificacion": "directo",
+            "ms": 21.59,
+            "terminos": [
+                "rekisi",
+                "entreg",
+                "kalend",
+                "inskri"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 22,
+            "consulta": "ya me aceptaron ahora que hago",
+            "grupo": "",
+            "esperado": "admision-aceptado-siguientes-pasos",
+            "categoria": "inscripcion",
+            "resultado": "respondida",
+            "obtenido": "admision-aceptado-siguientes-pasos",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.8,
+            "terminos": [
+                "result",
+                "aora"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 23,
+            "consulta": "que dias reciben los documentos de los aceptados",
+            "grupo": "",
+            "esperado": "inscripcion-entrega-documentos",
+            "categoria": "inscripcion",
+            "resultado": "sugerencias",
+            "obtenido": "sugerencias: inscripcion-entrega-documentos, inscripcion-documentos, titulacion-fechas",
+            "confianza": 0.667,
+            "calificacion": "sugerencia",
+            "ms": 21.75,
+            "terminos": [
+                "entreg",
+                "rekisi",
+                "result"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 24,
+            "consulta": "el curso propedeutico cuanto cuesta y cuando es",
+            "grupo": "",
+            "esperado": "admision-propedeutico",
+            "categoria": "admision",
+            "resultado": "respondida",
+            "obtenido": "admision-propedeutico",
+            "confianza": 0.966,
+            "calificacion": "directo",
+            "ms": 21.62,
+            "terminos": [
+                "proped",
+                "kosto",
+                "kalend"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 25,
+            "consulta": "que carreras tiene la universidad",
+            "grupo": "",
+            "esperado": "carreras-oferta",
+            "categoria": "carreras",
+            "resultado": "respondida",
+            "obtenido": "carreras-oferta",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.57,
+            "terminos": [
+                "karera"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 26,
+            "consulta": "de que trata la carrera de energia",
+            "grupo": "",
+            "esperado": "carrera-detalle",
+            "categoria": "carreras",
+            "resultado": "respondida",
+            "obtenido": "carrera-detalle",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.83,
+            "terminos": [
+                "trata",
+                "karera",
+                "enerji"
+            ],
+            "carrera": "ingenieria-en-energia-y-desarrollo-sostenible",
+            "uso_contexto": false
+        },
+        {
+            "fila": 27,
+            "consulta": "que materias lleva ingenieria civil",
+            "grupo": "",
+            "esperado": "carrera-materias",
+            "categoria": "carreras",
+            "resultado": "respondida",
+            "obtenido": "carrera-materias",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.86,
+            "terminos": [
+                "planes",
+                "yeba",
+                "karera",
+                "sibil"
+            ],
+            "carrera": "ingenieria-civil",
+            "uso_contexto": false
+        },
+        {
+            "fila": 28,
+            "consulta": "en que puedo trabajar si estudio comercio internacional",
+            "grupo": "",
+            "esperado": "carrera-campo-laboral",
+            "categoria": "carreras",
+            "resultado": "sugerencias",
+            "obtenido": "sugerencias: carreras-comercio-tsu, carrera-campo-laboral, servicios-wifi",
+            "confianza": 0.547,
+            "calificacion": "fallo",
+            "ms": 21.67,
+            "terminos": [
+                "trabaj",
+                "estudi",
+                "komers",
+                "intern"
+            ],
+            "carrera": "licenciatura-en-comercio-internacional-y-aduanas",
+            "uso_contexto": false
+        },
+        {
+            "fila": 29,
+            "consulta": "me pasan el triptico de recursos naturales",
+            "grupo": "",
+            "esperado": "tripticos",
+            "categoria": "carreras",
+            "resultado": "respondida",
+            "obtenido": "tripticos",
+            "confianza": 0.875,
+            "calificacion": "directo",
+            "ms": 21.78,
+            "terminos": [
+                "pasan",
+                "tripti",
+                "rekurs",
+                "natura"
+            ],
+            "carrera": "licenciatura-en-ingenieria-en-manejo-de-recursos-naturales",
+            "uso_contexto": false
+        },
+        {
+            "fila": 30,
+            "consulta": "cuantos años son de carrera",
+            "grupo": "",
+            "esperado": "carreras-duracion",
+            "categoria": "carreras",
+            "resultado": "respondida",
+            "obtenido": "carreras-duracion",
+            "confianza": 0.892,
+            "calificacion": "directo",
+            "ms": 21.64,
+            "terminos": [
+                "kuanto",
+                "ano",
+                "karera"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 31,
+            "consulta": "que es un tecnico superior universitario",
+            "grupo": "",
+            "esperado": "carreras-tsu",
+            "categoria": "carreras",
+            "resultado": "respondida",
+            "obtenido": "carreras-tsu",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.43,
+            "terminos": [
+                "teknik"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 32,
+            "consulta": "las carreras son semestrales",
+            "grupo": "",
+            "esperado": "carreras-cuatrimestres",
+            "categoria": "carreras",
+            "resultado": "sugerencias",
+            "obtenido": "sugerencias: carreras-duracion, tramite-baja-temporal, carrera-materias",
+            "confianza": 0.777,
+            "calificacion": "fallo",
+            "ms": 21.92,
+            "terminos": [
+                "karera",
+                "kuatri"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 33,
+            "consulta": "se lleva ingles en todas las carreras",
+            "grupo": "",
+            "esperado": "carreras-ingles",
+            "categoria": "carreras",
+            "resultado": "respondida",
+            "obtenido": "carreras-ingles",
+            "confianza": 0.877,
+            "calificacion": "directo",
+            "ms": 21.79,
+            "terminos": [
+                "yeba",
+                "ingl",
+                "toda",
+                "karera"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 34,
+            "consulta": "que tsu tiene la carrera de aduanas",
+            "grupo": "",
+            "esperado": "carreras-comercio-tsu",
+            "categoria": "carreras",
+            "resultado": "respondida",
+            "obtenido": "carreras-comercio-tsu",
+            "confianza": 0.954,
+            "calificacion": "directo",
+            "ms": 21.58,
+            "terminos": [
+                "teknik",
+                "karera",
+                "aduana"
+            ],
+            "carrera": "licenciatura-en-comercio-internacional-y-aduanas",
+            "uso_contexto": false
+        },
+        {
+            "fila": 35,
+            "consulta": "tienen licenciatura de enfermeria",
+            "grupo": "",
+            "esperado": "carrera-enfermeria-proximamente",
+            "categoria": "carreras",
+            "resultado": "respondida",
+            "obtenido": "carrera-enfermeria-proximamente",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.48,
+            "terminos": [
+                "karera",
+                "enferm"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 36,
+            "consulta": "tienen medicina",
+            "grupo": "",
+            "esperado": "no_ofertada",
+            "categoria": "no_ofertada",
+            "resultado": "no_ofertada",
+            "obtenido": "no_ofertada",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 23.82,
+            "terminos": [
+                "medisi"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 37,
+            "consulta": "quiero estudiar derecho ahi se puede",
+            "grupo": "",
+            "esperado": "no_ofertada",
+            "categoria": "no_ofertada",
+            "resultado": "no_ofertada",
+            "obtenido": "no_ofertada",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.77,
+            "terminos": [
+                "karera",
+                "derech"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 38,
+            "consulta": "hay carrera de gastronomia",
+            "grupo": "",
+            "esperado": "no_ofertada",
+            "categoria": "no_ofertada",
+            "resultado": "no_ofertada",
+            "obtenido": "no_ofertada",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.59,
+            "terminos": [
+                "karera",
+                "gastro"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 39,
+            "consulta": "dan arquitectura",
+            "grupo": "",
+            "esperado": "no_ofertada",
+            "categoria": "no_ofertada",
+            "resultado": "no_ofertada",
+            "obtenido": "no_ofertada",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.44,
+            "terminos": [
+                "dan",
+                "arkite"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 40,
+            "consulta": "cuando inicia el proximo cuatrimestre",
+            "grupo": "",
+            "esperado": "calendario-inicio-cuatrimestre",
+            "categoria": "calendario",
+            "resultado": "respondida",
+            "obtenido": "calendario-inicio-cuatrimestre",
+            "confianza": 0.734,
+            "calificacion": "directo",
+            "ms": 21.85,
+            "terminos": [
+                "kalend",
+                "inisio",
+                "proxim",
+                "kuatri"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 41,
+            "consulta": "cuando son las vacaciones de fin de año",
+            "grupo": "",
+            "esperado": "calendario-vacaciones",
+            "categoria": "calendario",
+            "resultado": "sugerencias",
+            "obtenido": "sugerencias: calendario-vacaciones, calendario-fin-cuatrimestre, carreras-cuatrimestres",
+            "confianza": 0.539,
+            "calificacion": "sugerencia",
+            "ms": 21.72,
+            "terminos": [
+                "kalend",
+                "bakasi",
+                "fin",
+                "ano"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 42,
+            "consulta": "cuando son los examenes finales",
+            "grupo": "",
+            "esperado": "calendario-evaluaciones",
+            "categoria": "calendario",
+            "resultado": "respondida",
+            "obtenido": "calendario-evaluaciones",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.98,
+            "terminos": [
+                "kalend",
+                "examen",
+                "final"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 43,
+            "consulta": "que dias son de suspension de clases",
+            "grupo": "",
+            "esperado": "calendario-suspension",
+            "categoria": "calendario",
+            "resultado": "respondida",
+            "obtenido": "calendario-suspension",
+            "confianza": 0.971,
+            "calificacion": "directo",
+            "ms": 21.9,
+            "terminos": [
+                "suspen",
+                "klas"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 44,
+            "consulta": "cuando es la ultima fecha para pagar el cuatrimestre",
+            "grupo": "",
+            "esperado": "calendario-pago-cuatrimestre",
+            "categoria": "calendario",
+            "resultado": "respondida",
+            "obtenido": "calendario-pago-cuatrimestre",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 22.03,
+            "terminos": [
+                "kalend",
+                "limite",
+                "kalend",
+                "kosto",
+                "kuatri"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 45,
+            "consulta": "en que fechas me toca reinscribirme",
+            "grupo": "",
+            "esperado": "reinscripcion-fechas",
+            "categoria": "inscripcion",
+            "resultado": "respondida",
+            "obtenido": "reinscripcion-fechas",
+            "confianza": 0.973,
+            "calificacion": "directo",
+            "ms": 21.87,
+            "terminos": [
+                "kalend",
+                "toka",
+                "reinsk"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 46,
+            "consulta": "cuando es la ceremonia de graduacion",
+            "grupo": "",
+            "esperado": "calendario-clausura",
+            "categoria": "calendario",
+            "resultado": "respondida",
+            "obtenido": "calendario-clausura",
+            "confianza": 0.877,
+            "calificacion": "directo",
+            "ms": 22.18,
+            "terminos": [
+                "kalend",
+                "seremo",
+                "klausu"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 47,
+            "consulta": "como tramito una constancia",
+            "grupo": "",
+            "esperado": "tramite-constancia",
+            "categoria": "tramites",
+            "resultado": "respondida",
+            "obtenido": "tramite-constancia",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 22.26,
+            "terminos": [
+                "tramit",
+                "konsta"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 48,
+            "consulta": "se me perdio la credencial",
+            "grupo": "",
+            "esperado": "tramite-credencial",
+            "categoria": "tramites",
+            "resultado": "respondida",
+            "obtenido": "tramite-credencial",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 22.05,
+            "terminos": [
+                "perdi",
+                "kreden"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 49,
+            "consulta": "quiero dejar la carrera un cuatrimestre y luego volver",
+            "grupo": "",
+            "esperado": "tramite-baja-temporal",
+            "categoria": "tramites",
+            "resultado": "respondida",
+            "obtenido": "tramite-baja-temporal",
+            "confianza": 0.752,
+            "calificacion": "directo",
+            "ms": 22.23,
+            "terminos": [
+                "dejar",
+                "karera",
+                "kuatri",
+                "luego",
+                "reingr"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 50,
+            "consulta": "como consigo mi historial de calificaciones",
+            "grupo": "",
+            "esperado": "tramite-historial",
+            "categoria": "tramites",
+            "resultado": "respondida",
+            "obtenido": "tramite-historial",
+            "confianza": 0.707,
+            "calificacion": "directo",
+            "ms": 21.81,
+            "terminos": [
+                "konsig",
+                "kardex",
+                "kalifi"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 51,
+            "consulta": "me quiero pasar de civil a energia",
+            "grupo": "",
+            "esperado": "tramite-cambio-carrera",
+            "categoria": "tramites",
+            "resultado": "respondida",
+            "obtenido": "carrera-detalle",
+            "confianza": 0.639,
+            "calificacion": "fallo",
+            "ms": 21.58,
+            "terminos": [
+                "pasar",
+                "sibil",
+                "enerji"
+            ],
+            "carrera": "ingenieria-civil",
+            "uso_contexto": false
+        },
+        {
+            "fila": 52,
+            "consulta": "hay becas para los alumnos",
+            "grupo": "",
+            "esperado": "becas-tipos",
+            "categoria": "becas",
+            "resultado": "sugerencias",
+            "obtenido": "sugerencias: becas-tipos, becas-requisitos, becas-benito-juarez",
+            "confianza": 0.617,
+            "calificacion": "sugerencia",
+            "ms": 21.48,
+            "terminos": [
+                "beka",
+                "alumno"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 53,
+            "consulta": "que paso con la beca del 50 por ciento",
+            "grupo": "",
+            "esperado": "becas-transformando-guerrero",
+            "categoria": "becas",
+            "resultado": "sugerencias",
+            "obtenido": "sugerencias: becas-transformando-guerrero, admision-proceso, reinscripcion-proceso",
+            "confianza": 0.591,
+            "calificacion": "sugerencia",
+            "ms": 21.55,
+            "terminos": [
+                "paso",
+                "beka",
+                "50",
+                "siento"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 54,
+            "consulta": "hay doctor o enfermera en la universidad",
+            "grupo": "",
+            "esperado": "servicio-medico",
+            "categoria": "servicios",
+            "resultado": "respondida",
+            "obtenido": "servicio-medico",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.45,
+            "terminos": [
+                "mediko",
+                "mediko"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 55,
+            "consulta": "tienen biblioteca",
+            "grupo": "",
+            "esperado": "servicios-biblioteca",
+            "categoria": "servicios",
+            "resultado": "respondida",
+            "obtenido": "servicios-biblioteca",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.65,
+            "terminos": [
+                "biblio"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 56,
+            "consulta": "venden comida dentro de la universidad",
+            "grupo": "",
+            "esperado": "servicios-cafeteria",
+            "categoria": "servicios",
+            "resultado": "respondida",
+            "obtenido": "servicios-cafeteria",
+            "confianza": 0.861,
+            "calificacion": "directo",
+            "ms": 21.69,
+            "terminos": [
+                "benden",
+                "kafete",
+                "dentro"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 57,
+            "consulta": "que deportes se practican",
+            "grupo": "",
+            "esperado": "deportes-disciplinas",
+            "categoria": "deportes",
+            "resultado": "respondida",
+            "obtenido": "deportes-disciplinas",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.52,
+            "terminos": [
+                "deport",
+                "deport"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 58,
+            "consulta": "donde reviso la transparencia de la universidad",
+            "grupo": "",
+            "esperado": "transparencia-donde",
+            "categoria": "transparencia",
+            "resultado": "respondida",
+            "obtenido": "transparencia-donde",
+            "confianza": 0.712,
+            "calificacion": "directo",
+            "ms": 21.51,
+            "terminos": [
+                "rebiso",
+                "transp"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 59,
+            "consulta": "cual es el telefono para informes",
+            "grupo": "",
+            "esperado": "contacto-general",
+            "categoria": "contacto",
+            "resultado": "respondida",
+            "obtenido": "contacto-general",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.52,
+            "terminos": [
+                "telefo",
+                "inform"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 60,
+            "consulta": "me dan el numero de whatsapp",
+            "grupo": "",
+            "esperado": "contacto-whatsapp",
+            "categoria": "contacto",
+            "resultado": "respondida",
+            "obtenido": "contacto-whatsapp",
+            "confianza": 0.82,
+            "calificacion": "directo",
+            "ms": 21.41,
+            "terminos": [
+                "dan",
+                "numero",
+                "uatsap"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 61,
+            "consulta": "en que calle esta la universidad",
+            "grupo": "",
+            "esperado": "contacto-ubicacion",
+            "categoria": "contacto",
+            "resultado": "respondida",
+            "obtenido": "contacto-ubicacion",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.36,
+            "terminos": [
+                "ubikas"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 62,
+            "consulta": "quien es el rector de la universidad",
+            "grupo": "",
+            "esperado": "institucional-rector",
+            "categoria": "institucional",
+            "resultado": "respondida",
+            "obtenido": "institucional-rector",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.55,
+            "terminos": [
+                "kien",
+                "rektor"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 63,
+            "consulta": "que necesito para sacar mi titulo",
+            "grupo": "",
+            "esperado": "titulacion-requisitos",
+            "categoria": "titulacion",
+            "resultado": "respondida",
+            "obtenido": "titulacion-requisitos",
+            "confianza": 0.938,
+            "calificacion": "directo",
+            "ms": 21.6,
+            "terminos": [
+                "rekisi",
+                "tramit",
+                "titula"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 64,
+            "consulta": "en que cuatrimestre se hace la estadia",
+            "grupo": "",
+            "esperado": "estadias-que-son",
+            "categoria": "estadias",
+            "resultado": "respondida",
+            "obtenido": "estadias-que-son",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.5,
+            "terminos": [
+                "kuatri",
+                "estadi"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 65,
+            "consulta": "cuando empieza el periodo de estancias",
+            "grupo": "",
+            "esperado": "estadias-fechas",
+            "categoria": "estadias",
+            "resultado": "respondida",
+            "obtenido": "estadias-fechas",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.7,
+            "terminos": [
+                "kalend",
+                "inisio",
+                "kalend",
+                "estadi"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 66,
+            "consulta": "se hace servicio social",
+            "grupo": "",
+            "esperado": "servicio-social",
+            "categoria": "estadias",
+            "resultado": "respondida",
+            "obtenido": "servicio-social",
+            "confianza": 1,
+            "calificacion": "directo",
+            "ms": 21.41,
+            "terminos": [
+                "serbis"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 67,
+            "consulta": "cual es la receta del pozole",
+            "grupo": "",
+            "esperado": "sin_respuesta",
+            "categoria": "sin_respuesta",
+            "resultado": "sin_respuesta",
+            "obtenido": "sin_respuesta",
+            "confianza": 0,
+            "calificacion": "directo",
+            "ms": 21.51,
+            "terminos": [
+                "reseta",
+                "posole"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 68,
+            "consulta": "quien gano el clasico america chivas",
+            "grupo": "",
+            "esperado": "sin_respuesta",
+            "categoria": "sin_respuesta",
+            "resultado": "sugerencias",
+            "obtenido": "sugerencias: institucional-rector, deportes-unirse, titulacion-cedula",
+            "confianza": 0.302,
+            "calificacion": "fallo",
+            "ms": 21.96,
+            "terminos": [
+                "kien",
+                "gano",
+                "klasik",
+                "amerik",
+                "chiba"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        },
+        {
+            "fila": 69,
+            "consulta": "cuanto cuesta un boleto de avion a tijuana",
+            "grupo": "",
+            "esperado": "sin_respuesta",
+            "categoria": "sin_respuesta",
+            "resultado": "sugerencias",
+            "obtenido": "sugerencias: costos-cuatrimestre, costos-total, inscripcion-costo",
+            "confianza": 0.306,
+            "calificacion": "fallo",
+            "ms": 21.63,
+            "terminos": [
+                "kosto",
+                "boleto",
+                "abion",
+                "tijuan"
+            ],
+            "carrera": null,
+            "uso_contexto": false
+        }
+    ]
+}

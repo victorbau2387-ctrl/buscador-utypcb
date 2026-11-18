@@ -375,13 +375,18 @@
             lc.appendChild(a);
             ul.appendChild(lc);
         }
-        var tel = texto(c.telefono).trim();
-        var telLimpio = tel.replace(/[^\d+]/g, '');
-        if (tel && telLimpio.replace(/\D/g, '').length >= 7) {
-            var lt = el('li', null, 'Teléfono: ');
-            var at = el('a', null, tel);
-            at.href = 'tel:' + telLimpio;
-            lt.appendChild(at);
+        // Puede traer varios números separados por coma, "/" o ";": un enlace tel: por número.
+        var tels = texto(c.telefono).split(/[,\/;]/).map(function (t) { return t.trim(); }).filter(function (t) {
+            return t.replace(/\D/g, '').length >= 7;
+        });
+        if (tels.length) {
+            var lt = el('li', null, tels.length > 1 ? 'Teléfonos: ' : 'Teléfono: ');
+            tels.forEach(function (t, i) {
+                if (i > 0) { lt.appendChild(document.createTextNode(' · ')); }
+                var at = el('a', null, t);
+                at.href = 'tel:' + t.replace(/[^\d+]/g, '');
+                lt.appendChild(at);
+            });
             ul.appendChild(lt);
         }
         if (urlSegura(c.url)) {

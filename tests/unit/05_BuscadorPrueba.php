@@ -60,7 +60,7 @@ prueba('respondida: dinámica arma el texto con los datos del sitio', function (
 
 prueba('sugerencias: consulta ambigua ofrece hasta 3 opciones', function () {
     $m = motorPrueba();
-    $r = $m->buscar('examen');
+    $r = $m->buscar('fecha'); // empata entre calendario, vacaciones y evaluaciones
     igual('sugerencias', $r['resultado']);
     igual(null, $r['respuesta']);
     igual(null, $r['faq_id']);
@@ -87,7 +87,7 @@ prueba('sin_respuesta: texto sin relación canaliza al contacto general', functi
     igual(null, $r['respuesta']);
     igual([], $r['sugerencias']);
     igual('Servicios Escolares', $r['canalizar']['nombre']);
-    igual('https://utypcb.edu.mx/contacto.php', $r['canalizar']['url']);
+    igual('https://utypcb.edu.mx/', $r['canalizar']['url']);
 });
 
 prueba('sin_respuesta: solo saludos o palabras vacías', function () {
@@ -106,10 +106,10 @@ prueba('sin_respuesta: un intento de XSS no produce coincidencias ni se refleja'
 });
 
 prueba('no_ofertada: carrera que no se imparte, con la lista de carreras disponibles', function () {
-    $r = motorPrueba()->buscar('¿tienen enfermería?');
+    $r = motorPrueba()->buscar('¿tienen medicina?');
     igual('no_ofertada', $r['resultado']);
     igual(1.0, $r['confianza']);
-    contiene('no ofrece la carrera de Enfermería', $r['respuesta']['texto']);
+    contiene('no ofrece la carrera de Medicina', $r['respuesta']['texto']);
     contiene('• Ingeniería Civil', $r['respuesta']['texto']);
     igual('https://utypcb.edu.mx/plan_estudios.php', $r['respuesta']['fuente']);
 });
@@ -163,7 +163,7 @@ prueba('contexto: "info de civil" conserva la carrera para el siguiente mensaje'
 });
 
 prueba('contexto: una carrera en contexto no debe ocultar una carrera no ofertada', function () {
-        $r = motorPrueba()->buscar('¿tienen enfermería?', ['carrera' => SLUG_CIVIL]);
+        $r = motorPrueba()->buscar('¿tienen medicina?', ['carrera' => SLUG_CIVIL]);
         igual('no_ofertada', $r['resultado']);
     }
 );
@@ -197,7 +197,7 @@ prueba('umbrales: subir umbral_respuesta convierte la respuesta en sugerencias',
 prueba('umbrales: subir umbral_sugerencias deja la consulta sin respuesta', function () {
     Config::establecer(['busqueda' => ['umbral_sugerencias' => 0.99]]);
     try {
-        $r = motorPrueba()->buscar('examen');
+        $r = motorPrueba()->buscar('fecha');
         igual('sin_respuesta', $r['resultado']);
         afirmar(is_array($r['canalizar']), 'canaliza');
         igual('Servicios Escolares', $r['canalizar']['nombre'], 'contacto del área de la mejor coincidencia');
@@ -218,8 +218,8 @@ prueba('umbrales: max_sugerencias limita la lista', function () {
 });
 
 prueba('umbrales: empate cercano por debajo de 0.85 no responde directo', function () {
-    // "examen" queda casi empatado entre evaluaciones y requisitos (< 0.04 de diferencia).
-    $r = motorPrueba()->buscar('examen');
+    // "fecha" queda casi empatada entre calendario, vacaciones y evaluaciones (< 0.04 de diferencia).
+    $r = motorPrueba()->buscar('fecha');
     igual('sugerencias', $r['resultado']);
 });
 
