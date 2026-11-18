@@ -79,6 +79,8 @@ try {
         exit(1);
     }
     $restablecer = false;
+    $nombre = '';
+    $rol = 'editor';
     if (Cuentas::existe($usuario)) {
         $r = strtolower(bf_preguntar('Ese usuario ya existe. ¿Restablecer su contraseña? (s/N): '));
         if ($r !== 's' && $r !== 'si' && $r !== 'sí') {

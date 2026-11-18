@@ -130,7 +130,10 @@ final class Auth
             Db::ejecutar('UPDATE bf_admin SET password_hash = ? WHERE id = ?', [password_hash($password, PASSWORD_DEFAULT), (int) $fila['id']]);
         }
         Db::ejecutar('UPDATE bf_admin SET ultimo_acceso = NOW() WHERE id = ?', [(int) $fila['id']]);
+        // Un acceso correcto reinicia ambos contadores: en el campus muchas personas comparten IP (NAT)
+        // y los accesos legítimos no deben agotar el cupo de los demás. El límite por usuario sigue protegiendo cada cuenta.
         RateLimiter::reiniciar('login-usuario', mb_strtolower($usuario), self::VENTANA_LOGIN);
+        RateLimiter::reiniciar('login-visitante', Http::huellaVisitante(), self::VENTANA_LOGIN);
 
         session_regenerate_id(true);
         $_SESSION = [
