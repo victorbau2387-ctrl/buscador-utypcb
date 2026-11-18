@@ -31,14 +31,16 @@ final class Acceso
         if ($error !== null) {
             $h .= '<div class="aviso aviso-error" role="alert">' . Http::e($error) . '</div>';
         }
-        $h .= '<form method="post" action="' . Http::e(Vista::url('entrar')) . '" class="formulario angosto">' . Vista::campoCsrf()
-            . '<label for="usuario">Usuario</label>'
-            . '<input id="usuario" name="usuario" autocomplete="username" required maxlength="60" value="' . Http::e($usuario) . '" autofocus>'
-            . '<label for="password">Contraseña</label>'
-            . '<input id="password" name="password" type="password" autocomplete="current-password" required>'
-            . '<button type="submit">Entrar</button></form>'
-            . '<p class="nota">Las cuentas las crea el responsable técnico. Si olvidaste tu contraseña, pídele que la restablezca.</p>';
-        Vista::pagina('Entrar', $h);
+        $h .= '<form method="post" action="' . Http::e(Vista::url('entrar')) . '" class="acceso-form">' . Vista::campoCsrf()
+            . '<div class="campo"><label for="usuario">Usuario</label>'
+            . '<input id="usuario" name="usuario" autocomplete="username" required maxlength="60" value="' . Http::e($usuario) . '" autofocus></div>'
+            . '<div class="campo"><label for="password">Contraseña</label>'
+            . '<div class="campo-clave"><input id="password" name="password" type="password" autocomplete="current-password" required>'
+            . '<button type="button" class="ver-clave" data-ver-clave="password" aria-controls="password" aria-pressed="false" hidden>Mostrar</button></div></div>'
+            . '<button type="submit" class="acceso-boton">Entrar al panel</button></form>'
+            . '<p class="acceso-nota">¿Necesitas una cuenta o olvidaste tu contraseña? Pídesela a un superadministrador del panel: '
+            . 'puede crear cuentas y restablecer contraseñas en la sección <strong>Cuentas</strong>.</p>';
+        Vista::paginaAcceso($h);
     }
 
     public static function salir(bool $post): void

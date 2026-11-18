@@ -35,8 +35,8 @@ final class Preguntas
         }
         if ($q !== '') {
             $like = '%' . addcslashes(mb_substr($q, 0, 100), '%_\\') . '%';
-            $where[] = '(f.pregunta LIKE ? OR f.slug LIKE ? OR f.palabras_clave LIKE ? OR EXISTS (SELECT 1 FROM bf_variante v WHERE v.faq_id = f.id AND v.texto LIKE ?))';
-            array_push($params, $like, $like, $like, $like);
+            $where[] = '(f.pregunta LIKE ? OR f.respuesta LIKE ? OR f.slug LIKE ? OR f.palabras_clave LIKE ? OR EXISTS (SELECT 1 FROM bf_variante v WHERE v.faq_id = f.id AND v.texto LIKE ?))';
+            array_push($params, $like, $like, $like, $like, $like);
         }
         $sqlWhere = $where ? 'WHERE ' . implode(' AND ', $where) : '';
         $total = (int) (Db::uno('SELECT COUNT(*) AS n FROM bf_faq f ' . $sqlWhere, $params)['n'] ?? 0);

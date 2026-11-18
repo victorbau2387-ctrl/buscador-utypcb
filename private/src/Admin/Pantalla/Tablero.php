@@ -40,7 +40,15 @@ final class Tablero
              GROUP BY f.id, f.pregunta ORDER BY n DESC, f.id ASC LIMIT 10'
         );
 
-        $h = '<section class="tarjetas" aria-label="Indicadores de los últimos 30 días">'
+        $u = \Buscador\Admin\Auth::usuario();
+        $h = '<nav class="atajos" aria-label="Acciones rápidas">'
+            . '<a class="boton boton-sol" href="' . Http::e(Vista::url('pregunta')) . '">+ Nueva pregunta</a>'
+            . '<a class="boton btn-sec" href="' . Http::e(Vista::url('sinrespuesta')) . '">Revisar sin respuesta</a>'
+            . '<a class="boton btn-sec" href="' . Http::e(Vista::url('preguntas', ['q' => 'PENDIENTE'])) . '">Completar pendientes</a>'
+            . ($u !== null && $u['rol'] === 'superadmin'
+                ? '<a class="boton btn-sec" href="' . Http::e(Vista::url('cuenta_nueva')) . '">+ Crear cuenta</a>' : '')
+            . '</nav>'
+            . '<section class="tarjetas" aria-label="Indicadores de los últimos 30 días">'
             . self::tarjeta('Consultas (30 días)', number_format($totalConsultas))
             . self::tarjeta('¿Te sirvió? positivo', $votos > 0 ? round(100 * $positivos / $votos) . ' %' : 'sin votos', $votos > 0 ? $positivos . ' de ' . $votos . ' votos' : '')
             . self::tarjeta('Tiempo medio de respuesta', $m['ms'] !== null ? round((float) $m['ms']) . ' ms' : '—')

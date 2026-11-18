@@ -16,7 +16,9 @@ final class CuentasPantalla
     {
         $yo = (int) Auth::usuario()['id'];
         $filas = Db::todos('SELECT id, usuario, nombre, rol, activo, ultimo_acceso FROM bf_admin ORDER BY activo DESC, usuario');
-        $h = '<p><a class="boton" href="' . Http::e(Vista::url('cuenta_nueva')) . '">Nueva cuenta</a></p>'
+        $h = '<div class="cabeza-seccion"><p class="nota">Crea cuentas para las personas de cada área que mantendrán las respuestas. '
+            . '<strong>Editor</strong>: preguntas, áreas y revisión. <strong>Superadministrador</strong>: además gestiona cuentas.</p>'
+            . '<a class="boton boton-sol" href="' . Http::e(Vista::url('cuenta_nueva')) . '">+ Crear cuenta</a></div>'
             . '<div class="tabla-scroll"><table><thead><tr><th scope="col">Usuario</th><th scope="col">Nombre</th><th scope="col">Rol</th><th scope="col">Estado</th><th scope="col">Último acceso</th><th scope="col">Acciones</th></tr></thead><tbody>';
         foreach ($filas as $c) {
             $id = (int) $c['id'];
