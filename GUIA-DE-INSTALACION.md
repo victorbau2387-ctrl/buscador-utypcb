@@ -116,15 +116,29 @@ complemento de Microsoft que PHP necesita:
 
 ### La primera vez: crea tu cuenta
 
-La primera vez, la ventana negra te hace unas preguntas. Contéstalas escribiendo y presionando
-**Enter** ↵ después de cada una:
+**Solo la primera vez**, la misma **ventana negra** que se abrió te hace unas preguntas para crear tu
+cuenta. **No tienes que abrir PowerShell ni otra ventana**: contesta ahí mismo, escribiendo y
+presionando **Enter** ↵ después de cada respuesta.
+
+Se ve así (lo que escribes tú va después de los dos puntos):
+
+```
+ ==== Primera vez: crea tu cuenta del panel ====
+
+Usuario: maria.lopez
+Nombre completo: María López
+Rol [superadmin/editor] (editor): superadmin
+Contraseña (mínimo 12 caracteres): ************
+Repite la contraseña: ************
+Cuenta "maria.lopez" creada con rol superadmin.
+```
 
 | Te pregunta | Qué escribir | Ejemplo |
 |---|---|---|
 | Usuario | Un nombre corto, sin espacios | `maria.lopez` |
-| Nombre | Tu nombre completo | `María López` |
+| Nombre completo | Tu nombre | `María López` |
 | Rol (dice `[superadmin/editor]`) | Escribe **`superadmin`** | `superadmin` |
-| Contraseña | Una contraseña de **12 letras o más** | (no la escribas en ningún otro lado) |
+| Contraseña (mínimo 12 caracteres) | Una contraseña de **12 letras o más** | (no la escribas en ningún otro lado) |
 | Repite la contraseña | La misma otra vez | |
 
 > 🙈 **Al escribir la contraseña verás asteriscos `****` en lugar de las letras** (en algunas
@@ -133,6 +147,14 @@ La primera vez, la ventana negra te hace unas preguntas. Contéstalas escribiend
 
 > 📝 **Apunta tu usuario y contraseña en un lugar seguro.** Si los olvidas, otra persona con cuenta
 > de superadministrador te los puede restablecer.
+
+> 🔁 **Esto pasa una sola vez.** Las siguientes veces la ventana negra ya no pregunta nada: solo
+> entras con tu usuario y contraseña en la página del panel.
+
+> 👥 **¿Más personas van a usar el panel?** No repitas esto. Ya dentro del panel, ve a
+> **Cuentas → + Crear cuenta** (o el botón **+ Crear cuenta** del tablero) y crea una cuenta para cada
+> persona. Para el personal de las áreas elige el rol **Editor**. Más detalles en el
+> [Manual de usuario del panel](docs/06-manual-administrador.md#8-cuentas-solo-superadministrador).
 
 ### Entrar
 
