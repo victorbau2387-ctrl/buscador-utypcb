@@ -92,7 +92,7 @@ final class Vista
         header('X-Content-Type-Options: nosniff');
         header('X-Frame-Options: DENY');
         header('Referrer-Policy: same-origin');
-        header("Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'");
+        header("Content-Security-Policy: default-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'");
         header('X-Robots-Tag: noindex, nofollow');
     }
 
@@ -132,9 +132,12 @@ final class Vista
             . '<meta name="viewport" content="width=device-width, initial-scale=1">'
             . '<meta name="robots" content="noindex, nofollow">'
             . '<title>' . Http::e($titulo) . ' · Panel del buscador</title>'
+            // Mismas tipografías que utypcb.edu.mx (Fraunces, Archivo, JetBrains Mono).
+            . '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+            . '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Archivo:wght@400..700&family=JetBrains+Mono:wght@400;600&display=swap">'
             . '<link rel="stylesheet" href="admin.css"></head><body>'
             . '<a class="saltar" href="#contenido">Saltar al contenido</a>'
-            . '<header class="barra"><span class="marca">Panel del buscador</span>'
+            . '<header class="barra"><span class="marca"><span class="marca-utyp">UTyP</span> Panel del buscador</span>'
             . ($u !== null ? '<span class="quien">' . Http::e((string) $u['nombre']) . ' · ' . Http::e(Auth::ROLES[$u['rol']] ?? (string) $u['rol']) . '</span>' : '')
             . '</header>' . $menu
             . '<main id="contenido"><h1>' . Http::e($titulo) . '</h1>' . $aviso . $cuerpo . '</main>'
