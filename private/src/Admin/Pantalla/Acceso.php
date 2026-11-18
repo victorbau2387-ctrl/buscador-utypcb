@@ -25,7 +25,7 @@ final class Acceso
                 Vista::redirigir('tablero');
                 return;
             }
-            http_response_code(401);
+            http_response_code(strpos($error, 'Demasiados') === 0 ? 429 : 401);
         }
         $h = '';
         if ($error !== null) {
