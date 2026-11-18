@@ -47,7 +47,7 @@ if "%BF_REIMPORTAR%"=="1" (
 if errorlevel 1 (
   echo.
   echo  ==== Primera vez: crea tu cuenta del panel ====
-  echo  Elige el rol superadmin. La contrasena no se ve mientras la escribes.
+  echo  Elige el rol superadmin. La contrasena se ve como asteriscos (o nada) al escribirla.
   echo.
   "%PHP%" private\bin\crear-admin.php
 )
@@ -62,3 +62,6 @@ echo  Deja esta ventana abierta mientras lo usas (Ctrl+C o cerrarla lo detiene).
 echo.
 start "" %URL%
 "%PHP%" -S 127.0.0.1:8080 -t tests/sitio-local tests/sitio-local/router.php
+echo.
+echo El servidor se detuvo. Si fue por un error, lee el mensaje de arriba.
+pause

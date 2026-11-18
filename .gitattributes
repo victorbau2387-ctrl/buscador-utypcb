@@ -2,3 +2,5 @@
 *.png binary
 *.docx binary
 *.xlsx binary
+*.cmd text eol=crlf
+*.ps1 text eol=crlf

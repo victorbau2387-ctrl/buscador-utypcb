@@ -1,5 +1,7 @@
 # Buscador de preguntas frecuentes · UTyP Coyuca de Benítez
 
+> 🦊 **¿Primera vez?** Sigue la [**Guía paso a paso de instalación**](GUIA-DE-INSTALACION.md): explica todo desde cero, desde abrir la carpeta hasta entrar al panel.
+
 Buscador de preguntas frecuentes con comprensión tolerante para el sitio de la Universidad Tecnológica y Politécnica de Coyuca de Benítez. El visitante escribe con sus palabras (con faltas, abreviaturas de chat o sin acentos) y recibe la respuesta oficial validada, sugerencias ("¿Quisiste decir…?"), el aviso de que una carrera no se ofrece, o la canalización al área responsable.
 
 - No genera texto ni usa inteligencia artificial externa: solo devuelve respuestas registradas o datos que ya publica el sitio (calendario, carreras, noticias, deportes, trípticos).
