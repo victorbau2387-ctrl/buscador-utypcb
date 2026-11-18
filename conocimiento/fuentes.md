@@ -147,8 +147,7 @@ CONCLUIDO», cada cuatrimestre de clases suma 35 horas a la semana y 525 horas, 
 600 horas (Civil y Comercio la marcan con 40 horas a la semana). En el mapa curricular de Civil, A1 y A2 aparecen como «usuario básico».
 Filas: `carreras-semanas-cuatrimestre`, `carreras-horas-semana` (parcial), `estadias-horas`.
 
-**Aviso para el revisor:** estos PDF responden dos filas que ya estaban PENDIENTE y no se tocaron: `admision-modalidad`
-(«escolarizada») y, en parte, `admision-bachillerato-en-curso` (el plan pide «bachillerato concluido»). Conviene actualizarlas.
+**Aplicado (18 nov. 2026):** con estos PDF se completó `admision-modalidad` («escolarizada» = clases presenciales) y se completó en parte `admision-bachillerato-en-curso` (el plan pide «bachillerato concluido»; sigue PENDIENTE si se puede presentar el examen antes de terminarlo — Servicios Escolares). Verificado en los PDF de Ingeniería Civil y de Energía.
 
 ### Otras páginas usadas en las filas nuevas
 - `https://utypcb.edu.mx/plan_estudios.php?carrera=ingenieria-civil` y las otras cuatro `?carrera=…`: competencia base «Comunicar en
@@ -193,6 +192,6 @@ ya los cubre `estadias-donde`; enfermedad y primeros auxilios, `servicio-medico`
   transporte, uniforme, psicología/tutorías, titulación, cédula, servicio social, solicitudes de transparencia.
 - **Recursos Financieros**: inscripción anual, reembolsos, pagos parciales, costos de trámites y de titulación, confirmación de la cuota
   cuatrimestral.
-- **Dirección Académica**: modalidad, horario y turnos, sabatino, solo TSU, faltas, biblioteca, laboratorios, opciones de titulación.
+- **Dirección Académica**: horario y turnos, sabatino, solo TSU, faltas, biblioteca, laboratorios, opciones de titulación.
 - **Vinculación**: estadías (empresas, apoyo económico, requisitos), bolsa de trabajo, selecciones deportivas.
 - **Rectoría / planeación**: misión y visión, historia, nuevas instalaciones, POA y Plan Estratégico (enlaces rotos).
