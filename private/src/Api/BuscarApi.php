@@ -100,6 +100,9 @@ final class BuscarApi
             Http::json(['ok' => false, 'error' => 'Pregunta no encontrada.'], 404);
             return;
         }
+        // Se registra como consulta elegida para poder votar "¿te sirvió?" y medir las más vistas.
+        $r['ms'] = 0;
+        $r['consulta_id'] = self::registrar((string) $r['respuesta']['pregunta'], $r);
         Http::json(['ok' => true] + $r);
     }
 

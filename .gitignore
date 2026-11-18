@@ -17,3 +17,6 @@ dump*.sql
 Thumbs.db
 .vscode/
 .idea/
+
+# Worktrees de agentes locales
+.claude/

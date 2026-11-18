@@ -29,8 +29,14 @@ final class Http
             return true; // misma página (petición del propio sitio)
         }
         $permitidos = (array) Config::get('seguridad.origenes_permitidos', []);
-        if (!in_array($origen, $permitidos, true)) {
+        // Los navegadores envían Origin también en POST del mismo sitio: se acepta si coincide con el host servido.
+        $hostOrigen = (string) parse_url($origen, PHP_URL_HOST) . (parse_url($origen, PHP_URL_PORT) ? ':' . parse_url($origen, PHP_URL_PORT) : '');
+        $mismoSitio = $hostOrigen !== '' && strcasecmp($hostOrigen, (string) ($_SERVER['HTTP_HOST'] ?? '')) === 0;
+        if (!$mismoSitio && !in_array($origen, $permitidos, true)) {
             return false;
+        }
+        if ($mismoSitio) {
+            return true; // misma página: no hacen falta cabeceras CORS
         }
         header('Access-Control-Allow-Origin: ' . $origen);
         header('Vary: Origin');

@@ -44,7 +44,9 @@ final class Buscador
         $ctxCarrera = isset($contexto['carrera']) && is_string($contexto['carrera']) && Carreras::porSlug($contexto['carrera'])
             ? $contexto['carrera'] : null;
         $usaContexto = false;
-        if ($carrera === null && $ctxCarrera !== null && $this->esSeguimiento($consulta, $terminos)) {
+        // Una carrera no ofertada nunca es "seguimiento" de la anterior ("tienen medicina" tras hablar de Civil).
+        $noOfertada = $carrera === null ? Carreras::noOfertada($consulta) : null;
+        if ($carrera === null && $noOfertada === null && $ctxCarrera !== null && $this->esSeguimiento($consulta, $terminos)) {
             $carrera = $ctxCarrera;
             $usaContexto = true;
         }
@@ -60,12 +62,12 @@ final class Buscador
             'diagnostico' => ['terminos' => $terminos, 'carrera' => $carrera, 'uso_contexto' => $usaContexto],
         ];
 
-        $noOfertada = $carrera === null ? Carreras::noOfertada($consulta) : null;
         if ($noOfertada !== null) {
             $lista = array_map(static function ($c) {
                 return '• ' . $c['nombre'];
             }, array_values(Carreras::activas()));
             $base['resultado'] = 'no_ofertada';
+            $base['contexto'] = ['carrera' => null];
             $base['confianza'] = 1.0;
             $base['respuesta'] = [
                 'id'       => null,
