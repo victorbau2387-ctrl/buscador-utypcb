@@ -12,7 +12,22 @@ probar el widget del buscador. **Solo para desarrollo**: no se sube al hosting y
 | `api-simulada.php` | Mismo contrato que `api.php`, pero sin MariaDB: usa el motor real con `conocimiento/preguntas.csv`. |
 | `config.local.php` | Configuración opcional para usar la API real con un MariaDB local (puerto 3307, base `bf_widget`). |
 
-## Levantar el servidor
+## Arranque rápido (Windows)
+
+Doble clic en `tests\sitio-local\iniciar.cmd` (o `iniciar.cmd php74` para probar con PHP 7.4).
+Inicia MariaDB local si no está corriendo, crea la base `bf_widget`, importa `conocimiento/*.csv`,
+levanta el servidor y abre el navegador:
+
+- Sitio simulado con el widget: http://127.0.0.1:8080/
+- Panel: http://127.0.0.1:8080/buscador/admin/ — primero crea tu cuenta en otra ventana de PowerShell:
+
+```powershell
+cd C:\asistente\buscador-utypcb
+$env:BF_CONFIG = "tests/sitio-local/config.local.php"
+C:\Users\Usuario\dev-tools\php83\php.exe private\bin\crear-admin.php
+```
+
+## Levantar el servidor (manual)
 
 Desde la raíz del repositorio, en PowerShell:
 
