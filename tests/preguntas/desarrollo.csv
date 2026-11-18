@@ -1,11 +1,69 @@
-consulta,esperado,grupo
-cuanto sale la inscripcion,inscripcion-costo,
-q becas dan,becas-tipos,
-kiero estudiar enfermeria,no_ofertada,
-a como esta el dolar hoy,sin_respuesta,
-cuando salimos de vacasiones en diciembre,calendario-vacaciones,
-que documentos llevo para sacar la ficha,admision-requisitos,
-hay equipo de futbol?,deportes,
-examen,calendario-evaluaciones|admision-requisitos,
-informacion de la carrera de civil,carrera-detalle,conv1
-y el triptico?,tripticos,conv1
+consulta,esperado
+buenas tardes cuanto me va a costar la ficha para el examen,costos-ficha
+oigan y la inscripcion en cuanto anda,inscripcion-costo
+cuanto se paga cada cuatrimestre ahi,costos-cuatrimestre
+mi mama quiere saber cuanto es todo lo que hay que pagar para entrar,costos-total
+a que cuenta le hago la transferencia,pagos-como-pagar
+se puede pagar en efectivo en la escuela,pagos-como-pagar
+ya hice el deposito que sigue con el comprobante,pagos-recibo-oficial
+que pasos hay que seguir para ser alumno de nuevo ingreso,admision-proceso
+pasenme la pagina donde me registro como aspirante,admision-preregistro
+cuando toca el examen de admision,admision-examen-fecha
+el examen de admision es presencial,admision-examen
+cuanto dura el test psicometrico,admision-psicometrico
+no tengo computadora en mi casa para el examen que hago,admision-sin-computadora
+hay alguna guia para prepararme para el examen,admision-guia
+donde publican quienes quedaron,admision-resultados
+cuantos puntos necesito sacar para que me acepten,admision-puntaje-minimo
+y si repruebo el examen de admision lo puedo volver a presentar,admision-no-aceptado
+sigo en el cobach puedo presentar examen,admision-bachillerato-en-curso
+que documentos me van a pedir cuando haga el registro,admision-requisitos
+que papeles entrego cuando ya me inscriba,inscripcion-documentos
+ya me aceptaron ahora que hago,admision-aceptado-siguientes-pasos
+que dias reciben los documentos de los aceptados,inscripcion-entrega-documentos
+el curso propedeutico cuanto cuesta y cuando es,admision-propedeutico
+que carreras tiene la universidad,carreras-oferta
+de que trata la carrera de energia,carrera-detalle
+que materias lleva ingenieria civil,carrera-materias
+en que puedo trabajar si estudio comercio internacional,carrera-campo-laboral
+me pasan el triptico de recursos naturales,tripticos
+cuantos años son de carrera,carreras-duracion
+que es un tecnico superior universitario,carreras-tsu
+las carreras son semestrales,carreras-cuatrimestres
+se lleva ingles en todas las carreras,carreras-ingles
+que tsu tiene la carrera de aduanas,carreras-comercio-tsu
+tienen licenciatura de enfermeria,carrera-enfermeria-proximamente
+tienen medicina,no_ofertada
+quiero estudiar derecho ahi se puede,no_ofertada
+hay carrera de gastronomia,no_ofertada
+dan arquitectura,no_ofertada
+cuando inicia el proximo cuatrimestre,calendario-inicio-cuatrimestre
+cuando son las vacaciones de fin de año,calendario-vacaciones
+cuando son los examenes finales,calendario-evaluaciones
+que dias son de suspension de clases,calendario-suspension
+cuando es la ultima fecha para pagar el cuatrimestre,calendario-pago-cuatrimestre
+en que fechas me toca reinscribirme,reinscripcion-fechas
+cuando es la ceremonia de graduacion,calendario-clausura
+como tramito una constancia,tramite-constancia
+se me perdio la credencial,tramite-credencial
+quiero dejar la carrera un cuatrimestre y luego volver,tramite-baja-temporal
+como consigo mi historial de calificaciones,tramite-historial
+me quiero pasar de civil a energia,tramite-cambio-carrera
+hay becas para los alumnos,becas-tipos
+que paso con la beca del 50 por ciento,becas-transformando-guerrero
+hay doctor o enfermera en la universidad,servicio-medico
+tienen biblioteca,servicios-biblioteca
+venden comida dentro de la universidad,servicios-cafeteria
+que deportes se practican,deportes-disciplinas
+donde reviso la transparencia de la universidad,transparencia-donde
+cual es el telefono para informes,contacto-general
+me dan el numero de whatsapp,contacto-whatsapp
+en que calle esta la universidad,contacto-ubicacion
+quien es el rector de la universidad,institucional-rector
+que necesito para sacar mi titulo,titulacion-requisitos
+en que cuatrimestre se hace la estadia,estadias-que-son
+cuando empieza el periodo de estancias,estadias-fechas
+se hace servicio social,servicio-social
+cual es la receta del pozole,sin_respuesta
+quien gano el clasico america chivas,sin_respuesta
+cuanto cuesta un boleto de avion a tijuana,sin_respuesta
