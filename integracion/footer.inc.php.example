@@ -1,0 +1,21 @@
+<?php
+/*
+ * EJEMPLO de integración. NO reemplaces tu footer.inc.php con este archivo.
+ *
+ * En el footer.inc.php real del sitio solo se agrega UNA línea, justo antes de </body>
+ * (después de los <script> que ya carga el sitio, como GSAP y Lenis):
+ *
+ *     <?php require $_SERVER['DOCUMENT_ROOT'] . '/buscador/widget.php'; ?>
+ *
+ * Para quitar el widget basta con borrar (o comentar) esa línea.
+ */
+?>
+  <footer class="pie-sitio">
+    <!-- … contenido actual del pie del sitio, sin cambios … -->
+  </footer>
+
+  <!-- … scripts que el sitio ya carga (GSAP, Lenis, main.js), sin cambios … -->
+
+  <?php require $_SERVER['DOCUMENT_ROOT'] . '/buscador/widget.php'; ?>
+</body>
+</html>
