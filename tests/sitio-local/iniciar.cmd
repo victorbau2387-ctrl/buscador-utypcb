@@ -27,7 +27,8 @@ set "BF_CONFIG=tests/sitio-local/config.local.php"
 "%PHP%" private\bin\importar.php | findstr /b "Importaci"
 
 echo.
-echo  Sitio simulado con el widget:  http://127.0.0.1:8080/
+echo  Sitio UTyP con el buscador:    http://127.0.0.1:8080/
+echo  Pagina de pruebas (desarrollo): http://127.0.0.1:8080/pruebas.php
 echo  Panel de administracion:       http://127.0.0.1:8080/buscador/admin/
 echo  (Ctrl+C para detener)
 echo.

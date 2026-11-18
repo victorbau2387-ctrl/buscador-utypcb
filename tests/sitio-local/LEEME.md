@@ -6,7 +6,8 @@ probar el widget del buscador. **Solo para desarrollo**: no se sube al hosting y
 
 | Archivo | Para qué |
 |---|---|
-| `index.php` | Página simulada con las variables CSS del sitio (`--naranja`, `--verde`, …) y fuentes Fraunces/Archivo. |
+| `index.php` | Portada real de utypcb.edu.mx con el buscador (incluye `replica.php`). |
+| `pruebas.php` | Página simulada con las variables CSS del sitio (`--naranja`, `--verde`, …) y fuentes Fraunces/Archivo. |
 | `header.inc.php`, `footer.inc.php` | Encabezado y pie simulados. El pie incluye `public_html/buscador/widget.php`, como lo hará el sitio real. |
 | `router.php` | Router del servidor embebido: `/buscador/*` → `public_html/buscador/*`. |
 | `api-simulada.php` | Mismo contrato que `api.php`, pero sin MariaDB: usa el motor real con `conocimiento/preguntas.csv`. |
@@ -18,7 +19,8 @@ Doble clic en `tests\sitio-local\iniciar.cmd` (o `iniciar.cmd php74` para probar
 Inicia MariaDB local si no está corriendo, crea la base `bf_widget`, importa `conocimiento/*.csv`,
 levanta el servidor y abre el navegador:
 
-- Sitio simulado con el widget: http://127.0.0.1:8080/
+- Portada real de utypcb.edu.mx con el buscador: http://127.0.0.1:8080/ (necesita internet la primera vez)
+- Página de pruebas para desarrolladores: http://127.0.0.1:8080/pruebas.php
 - Panel: http://127.0.0.1:8080/buscador/admin/ — primero crea tu cuenta en otra ventana de PowerShell:
 
 ```powershell
@@ -29,7 +31,7 @@ C:\Users\Usuario\dev-tools\php83\php.exe private\bin\crear-admin.php
 
 ## Vista previa sobre el sitio real
 
-http://127.0.0.1:8080/replica.php descarga la portada pública de utypcb.edu.mx (caché de 6 h en
+http://127.0.0.1:8080/ (`index.php` → `replica.php`) descarga la portada pública de utypcb.edu.mx (caché de 6 h en
 `tests/sitio-local/.cache/`, ignorada por git; `?renovar=1` la vuelve a bajar) y le inserta el widget
 como lo hará `footer.inc.php`. Sirve para ver el botón con los estilos, fuentes y scripts reales del sitio.
 No es parte del producto: el buscador nunca lee el HTML del sitio, solo los `*_data.php`.
@@ -53,12 +55,12 @@ Para probar con PHP 7.4 cambia `php83` por `php74`.
 
 Abre en el navegador:
 
-- `http://127.0.0.1:8080/?api=simulada` — **recomendado**: API simulada, no necesita base de datos.
-- `http://127.0.0.1:8080/?api=simulada&sprite=1` — simula `icons.inc.php` (`utyp_sprite()`); el sprite
+- `http://127.0.0.1:8080/pruebas.php?api=simulada` — **recomendado**: API simulada, no necesita base de datos.
+- `http://127.0.0.1:8080/pruebas.php?api=simulada&sprite=1` — simula `icons.inc.php` (`utyp_sprite()`); el sprite
   no trae `i-enviar` a propósito, para comprobar el icono de respaldo.
-- `http://127.0.0.1:8080/?api=simulada&forzar=429` — error 429 (también `500`, `lento` = tiempo
+- `http://127.0.0.1:8080/pruebas.php?api=simulada&forzar=429` — error 429 (también `500`, `lento` = tiempo
   agotado a los 8 s, `basura` = respuesta que no es JSON).
-- `http://127.0.0.1:8080/` — API real (`/buscador/api.php`). Necesita MariaDB (ver abajo).
+- `http://127.0.0.1:8080/pruebas.php` — API real (`/buscador/api.php`). Necesita MariaDB (ver abajo).
 
 ## Usar la API real (opcional)
 

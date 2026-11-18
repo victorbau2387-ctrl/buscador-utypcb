@@ -2,8 +2,9 @@
 /**
  * Vista previa del widget SOBRE la portada real de utypcb.edu.mx (solo desarrollo local).
  *
- *   http://127.0.0.1:8080/replica.php            usa la copia en caché (se renueva cada 6 h)
- *   http://127.0.0.1:8080/replica.php?renovar=1  vuelve a descargar la portada
+ *   http://127.0.0.1:8080/              (index.php la incluye) usa la copia en caché (se renueva cada 6 h)
+ *   http://127.0.0.1:8080/?renovar=1    vuelve a descargar la portada
+ *   http://127.0.0.1:8080/pruebas.php   página de pruebas para desarrolladores (modos de API, errores)
  *
  * Descarga la portada pública, agrega <base href="https://utypcb.edu.mx/"> para que estilos, imágenes
  * y enlaces sigan apuntando al sitio oficial, e inserta widget.php antes de </body>, como lo hará
@@ -36,9 +37,8 @@ if ($renovar) {
 }
 
 if (!is_file($cache)) {
-    http_response_code(502);
-    header('Content-Type: text/plain; charset=utf-8');
-    echo "No se pudo descargar la portada de $origen (¿sin internet?). Usa la página simulada: /";
+    // Sin internet y sin copia en caché: se muestra la página de pruebas (no necesita internet).
+    header('Location: /pruebas.php', true, 302);
     return;
 }
 $html = (string) file_get_contents($cache);
@@ -55,7 +55,9 @@ $widget = (string) ob_get_clean();
 
 $aviso = '<div style="position:fixed;left:12px;bottom:12px;z-index:8999;padding:6px 10px;border-radius:8px;'
     . 'background:#071a16;color:#eef3f1;font:12px/1.3 system-ui,sans-serif;opacity:.85">'
-    . 'Vista previa local · portada de utypcb.edu.mx + buscador</div>';
+    . 'Vista previa local · portada de utypcb.edu.mx + buscador · '
+    . '<a href="' . htmlspecialchars('http://' . ($_SERVER['HTTP_HOST'] ?? '127.0.0.1:8080') . '/pruebas.php', ENT_QUOTES, 'UTF-8')
+    . '" style="color:#3fbf9a">página de pruebas</a></div>';
 
 // <base> justo después de <head> para que todo lo relativo resuelva al sitio oficial.
 $html = (string) preg_replace('/<head([^>]*)>/i', '<head$1><base href="' . $origen . '">', $html, 1);
